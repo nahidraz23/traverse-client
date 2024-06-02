@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-volkhov{
+    font-family: "Volkhov", serif;
+}
+
+.font-mulish{
+    font-family: "Mulish", sans-serif;
+}
