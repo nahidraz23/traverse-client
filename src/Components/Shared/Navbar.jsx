@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { FaEnvelope, FaPowerOff, FaUser } from "react-icons/fa";
+import { MdAdminPanelSettings } from "react-icons/md";
 
 const Navbar = () => {
     const { user, signOutUser } = useAuth();
@@ -86,25 +87,27 @@ const Navbar = () => {
                                     </div>
                                 </summary>
                                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                                    <li><Link>Dashboard</Link></li>
-                                    <li><a>
+                                    <li><div className="flex gap-2 items-center ">
+                                        <MdAdminPanelSettings></MdAdminPanelSettings>
+                                        <Link>Dashboard</Link>
+                                    </div></li>
+                                    <li>
                                         <div className="flex gap-2 items-center">
                                             <FaUser className="text-green-500"></FaUser>
                                             <p>{user?.displayName}</p>
                                         </div>
-                                    </a></li>
-                                    <li><a>
+                                    </li>
+                                    <li>
                                         <div className="flex gap-2 items-center">
                                             <FaEnvelope className="text-blue-500"></FaEnvelope>
                                             <p>{user?.email}</p>
                                         </div>
-                                    </a></li>
-                                    <li><a>
-                                        <button onClick={handleSignOut} className="flex items-center gap-2">
-                                            <FaPowerOff className="text-red-500"></FaPowerOff>
-                                            <p>Log Out</p>
-                                        </button>
-                                    </a></li>
+                                    </li>
+                                    <li><button onClick={handleSignOut} className="flex items-center gap-2">
+                                        <FaPowerOff className="text-red-500"></FaPowerOff>
+                                        <p>Log Out</p>
+                                    </button></li>
+
                                 </ul>
                             </details>
                         </>

@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Register = () => {
     const {
@@ -11,6 +12,8 @@ const Register = () => {
     } = useForm()
 
     const { createUser, updateUserProfile } = useAuth();
+    const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
 
     const onSubmit = data => {
         const name = data.name;
@@ -18,23 +21,29 @@ const Register = () => {
         const email = data.email;
         const password = data.password;
 
+        const userInfo = { name, photoURL, email };
+
         createUser(email, password)
-        .then(() => {
-            updateUserProfile(name, photoURL)
-            .then(res => {
-                console.log(res)
-                Swal.fire({
-                    // position: "top-end",
-                    icon: "success",
-                    title: "Registration successful",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
+            .then(() => {
+                updateUserProfile(name, photoURL)
+                    .then(() => {
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    Swal.fire({
+                                        icon: "success",
+                                        title: "Registration successful",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                }
+                            })
+                    })
+                navigate('/');
             })
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .catch(error => {
+                console.log(error.message);
+            })
 
     }
 
