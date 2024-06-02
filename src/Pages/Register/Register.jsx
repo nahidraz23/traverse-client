@@ -20,7 +20,7 @@ const Register = () => {
 
         createUser(email, password)
         .then(() => {
-            updateUserProfile()
+            updateUserProfile(name, photoURL)
             .then(res => {
                 console.log(res)
                 Swal.fire({

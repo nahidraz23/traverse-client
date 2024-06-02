@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import { FaEnvelope, FaPowerOff, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, signOutUser } = useAuth();
@@ -35,13 +36,15 @@ const Navbar = () => {
     // handle sign out
     const handleSignOut = () => {
         signOutUser()
-        .then(res => {
-            console.log(res);
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(res => {
+                console.log(res);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
+
+    console.log(user)
 
     return (
         <div className="navbar bg-base-100">
@@ -73,13 +76,35 @@ const Navbar = () => {
                                 <summary className="m-1 btn btn-ghost">
                                     <div className="avatar">
                                         <div className="w-12 mask mask-hexagon">
-                                            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                            {
+                                                user?.photoURL ?
+                                                    <img src={user?.photoURL} />
+                                                    :
+                                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+                                            }
                                         </div>
                                     </div>
                                 </summary>
                                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                                     <li><Link>Dashboard</Link></li>
-                                    <li><a><button onClick={handleSignOut} className="">Log Out</button></a></li>
+                                    <li><a>
+                                        <div className="flex gap-2 items-center">
+                                            <FaUser className="text-green-500"></FaUser>
+                                            <p>{user?.displayName}</p>
+                                        </div>
+                                    </a></li>
+                                    <li><a>
+                                        <div className="flex gap-2 items-center">
+                                            <FaEnvelope className="text-blue-500"></FaEnvelope>
+                                            <p>{user?.email}</p>
+                                        </div>
+                                    </a></li>
+                                    <li><a>
+                                        <button onClick={handleSignOut} className="flex items-center gap-2">
+                                            <FaPowerOff className="text-red-500"></FaPowerOff>
+                                            <p>Log Out</p>
+                                        </button>
+                                    </a></li>
                                 </ul>
                             </details>
                         </>
