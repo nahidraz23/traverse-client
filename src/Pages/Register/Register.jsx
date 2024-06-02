@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
+import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const {
@@ -8,8 +10,32 @@ const Register = () => {
         formState: { errors },
     } = useForm()
 
+    const { createUser, updateUserProfile } = useAuth();
+
     const onSubmit = data => {
-        console.log(data)
+        const name = data.name;
+        const photoURL = data.photoURL;
+        const email = data.email;
+        const password = data.password;
+
+        createUser(email, password)
+        .then(() => {
+            updateUserProfile()
+            .then(res => {
+                console.log(res)
+                Swal.fire({
+                    // position: "top-end",
+                    icon: "success",
+                    title: "Registration successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            })
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+
     }
 
     return (

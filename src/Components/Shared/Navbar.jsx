@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+    const { user, signOutUser } = useAuth();
 
     const navLinks = (
         <div className="flex gap-9">
@@ -17,10 +19,10 @@ const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
     const handleToggleTheme = e => {
-        if(e.target.checked){
+        if (e.target.checked) {
             setTheme('sunset');
         }
-        else{
+        else {
             setTheme('light');
         }
     }
@@ -28,7 +30,18 @@ const Navbar = () => {
     useEffect(() => {
         localStorage.setItem('theme', theme);
         document.querySelector('html').setAttribute('data-theme', theme);
-    },[theme])
+    }, [theme])
+
+    // handle sign out
+    const handleSignOut = () => {
+        signOutUser()
+        .then(res => {
+            console.log(res);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
 
     return (
         <div className="navbar bg-base-100">
@@ -53,7 +66,28 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to={'/login'} className="btn">Login</Link>
+                {
+                    user ?
+                        <>
+                            <details className="dropdown dropdown-end">
+                                <summary className="m-1 btn btn-ghost">
+                                    <div className="avatar">
+                                        <div className="w-12 mask mask-hexagon">
+                                            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        </div>
+                                    </div>
+                                </summary>
+                                <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                    <li><Link>Dashboard</Link></li>
+                                    <li><a><button onClick={handleSignOut} className="">Log Out</button></a></li>
+                                </ul>
+                            </details>
+                        </>
+                        :
+                        <>
+                            <Link to={'/login'} className="btn">Login</Link>
+                        </>
+                }
                 <div className="md:ml-4">
                     <label className="swap swap-rotate">
 
