@@ -1,7 +1,9 @@
+import Banner from "./Banner";
+
 const Home = () => {
     return (
-        <div>
-            <h1>Home page</h1>
+        <div className="min-h-[calc(100vh-360px)]">
+            <Banner></Banner>
         </div>
     );
 };

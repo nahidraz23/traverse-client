@@ -8,7 +8,7 @@ const Navbar = () => {
     const { user, signOutUser } = useAuth();
 
     const navLinks = (
-        <div className="flex gap-9">
+        <div className="flex gap-9 text-white font-semibold text-xl">
             <NavLink><li>Home</li></NavLink>
             <NavLink><li>Community</li></NavLink>
             <NavLink><li>Blogs</li></NavLink>
@@ -48,7 +48,7 @@ const Navbar = () => {
     console.log(user)
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 fixed z-10 bg-opacity-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,14 +62,15 @@ const Navbar = () => {
                 </div>
                 <a className="text-xl">Traverse</a>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    {
-                        navLinks
-                    }
-                </ul>
-            </div>
+
             <div className="navbar-end">
+                <div className="navbar-center hidden lg:flex mr-32">
+                    <ul className="menu menu-horizontal px-1">
+                        {
+                            navLinks
+                        }
+                    </ul>
+                </div>
                 {
                     user ?
                         <>
@@ -113,7 +114,7 @@ const Navbar = () => {
                         </>
                         :
                         <>
-                            <Link to={'/login'} className="btn">Login</Link>
+                            <Link to={'/login'} className="btn bg-primary-color text-black dark:hover:text-primary-color border-none">Login</Link>
                         </>
                 }
                 <div className="md:ml-4">
