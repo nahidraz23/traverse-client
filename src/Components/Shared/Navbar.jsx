@@ -44,7 +44,7 @@ const Navbar = () => {
                 console.log(error.message);
             })
     }
-    
+
     return (
         <div className="navbar bg-base-100 fixed z-10 bg-opacity-50">
             <div className="navbar-start">
@@ -58,7 +58,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="text-xl">Traverse</a>
+                <a className="text-3xl font-semibold text-white">Traverse</a>
             </div>
 
             <div className="navbar-end">
