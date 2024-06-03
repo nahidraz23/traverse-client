@@ -29,7 +29,7 @@
   
   .react-tabs__tab-panel {
     padding: 20px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     display: none; /* Hide all tab panels by default */
   }
   

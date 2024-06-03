@@ -2,6 +2,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './TourGuideSection.css'
 import YoutubeVideo from '../../../Components/Shared/YoutubeVideo';
 import OurPackages from './OurPackages/OurPackages';
+import MeetTourGuides from './MeetTourGuides/MeetTourGuides';
+import SectionHeading from '../../../Components/Shared/SectionHeading';
 
 const TourGuideSection = () => {
     const overviewYoutubeID = 'rn0nkEZdoRg';
@@ -9,8 +11,10 @@ const TourGuideSection = () => {
     return (
         <div className='container mx-auto'>
             <div className='mt-32 mb-10 text-center'>
-                <h1 className='text-4xl font-bold font-volkhov'>Tourism and Travel Guide Section</h1>
-                <p className='mt-5'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit</p>
+                <SectionHeading
+                    heading={"Tourism and Travel Guide Section"}
+                    subHeading={"Get valuable advice from seasoned travelers to make your trips smoother and more enjoyable. Learn about packing hacks, budgeting, and navigating new places like a pro."}
+                ></SectionHeading>
             </div>
             <div className='text-center' >
                 <Tabs selectedTabClassName='react-tabs__tab--selected'>
@@ -30,10 +34,10 @@ const TourGuideSection = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        < OurPackages/>
+                        < OurPackages />
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 3</h2>
+                        <MeetTourGuides></MeetTourGuides>
                     </TabPanel>
                 </Tabs>
             </div>
