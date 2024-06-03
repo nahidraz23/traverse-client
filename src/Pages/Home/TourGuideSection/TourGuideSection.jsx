@@ -10,7 +10,7 @@ const TourGuideSection = () => {
 
     return (
         <div className='container mx-auto'>
-            <div className='mt-32 mb-10 text-center'>
+            <div className='text-center'>
                 <SectionHeading
                     heading={"Tourism and Travel Guide Section"}
                     subHeading={"Get valuable advice from seasoned travelers to make your trips smoother and more enjoyable. Learn about packing hacks, budgeting, and navigating new places like a pro."}
