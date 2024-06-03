@@ -30,23 +30,23 @@ const Banner = () => {
             className="mySwiper"
         >
             <SwiperSlide>
-                <div className='w-full h-[740px]'>
-                    <img src={bannerBG1} alt="" className='w-full h-[740px]' />
+                <div className='w-full h-screen'>
+                    <img src={bannerBG1} alt="" className='w-full h-screen' />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className='w-full h-[740px]'>
-                    <img src={bannerBG2} alt="" className='w-full h-[740px]' />
+                <div className='w-full h-screen'>
+                    <img src={bannerBG2} alt="" className='w-full h-screen' />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className='w-full h-[740px]'>
-                    <img src={bannerBG3} alt="" className='w-full h-[740px]' />
+                <div className='w-full h-screen'>
+                    <img src={bannerBG3} alt="" className='w-full h-screen' />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className='w-full h-[740px]'>
-                    <img src={bannerBG4} alt="" className='w-full h-[740px]' />
+                <div className='w-full h-screen'>
+                    <img src={bannerBG4} alt="" className='w-full h-screen' />
                 </div>
             </SwiperSlide>
         </Swiper>

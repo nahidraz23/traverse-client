@@ -3,7 +3,7 @@ import './TourGuideSection.css'
 import YoutubeVideo from '../../../Components/Shared/YoutubeVideo';
 
 const TourGuideSection = () => {
-    const youtubeID = 'rn0nkEZdoRg';
+    const overviewYoutubeID = 'rn0nkEZdoRg';
 
     return (
         <div className='container mx-auto'>
@@ -23,7 +23,7 @@ const TourGuideSection = () => {
                         <div className='flex justify-center'>
                             <div className="artboard artboard-horizontal phone-2">
                                 <YoutubeVideo
-                                    src={youtubeID}
+                                    src={overviewYoutubeID}
                                 ></YoutubeVideo>
                             </div>
                         </div>
