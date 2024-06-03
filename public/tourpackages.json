@@ -1,0 +1,45 @@
+[
+    {
+      "type": "Adventure",
+      "title": "Safari in Kenya",
+      "image": "https://images.unsplash.com/photo-1618083707368-b3823daa2726?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWR2ZW50dXJlfGVufDB8MHwwfHx8MA%3D%3D",
+      "price": 1500.00,
+      "date": "2024-07-01"
+    },
+    {
+      "type": "Beach",
+      "title": "Maldives Getaway",
+      "image": "https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGJlYWNofGVufDB8MHwwfHx8MA%3D%3D",
+      "price": 2000.00,
+      "date": "2024-08-10"
+    },
+    {
+      "type": "Cultural",
+      "title": "Historical Tour of Rome",
+      "image": "https://plus.unsplash.com/premium_photo-1664472706956-42f42184f7a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3VsdHVyYWwlMjB0b3VyaXNtfGVufDB8MHwwfHx8MA%3D%3D",
+      "price": 1200.00,
+      "date": "2024-09-15"
+    },
+    {
+      "type": "Mountain",
+      "title": "Hiking in the Swiss Alps",
+      "image": "https://plus.unsplash.com/premium_photo-1661960937960-1883bf00f480?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8TW91bnRhaW4lMjB0b3VyaXNtfGVufDB8MHwwfHx8MA%3D%3D",
+      "price": 1800.00,
+      "date": "2024-06-20"
+    },
+    {
+      "type": "Cruise",
+      "title": "Caribbean Cruise",
+      "image": "https://images.unsplash.com/photo-1586273202219-b748ea4db9b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fENydWlzZSUyMHRvdXJpc218ZW58MHwwfDB8fHww",
+      "price": 2500.00,
+      "date": "2024-10-05"
+    },
+    {
+      "type": "City",
+      "title": "New York City Lights",
+      "image": "https://plus.unsplash.com/premium_photo-1661284833474-98fe5463dc40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2l0eSUyMHRvdXJpc218ZW58MHwwfDB8fHww",
+      "price": 1000.00,
+      "date": "2024-11-12"
+    }
+  ]
+  

@@ -2,19 +2,18 @@
 .react-tabs__tab {
     padding: 10px 20px;
     cursor: pointer;
-    border: 1px solid transparent;
-    border-bottom: none;
+    border: 1px solid #7BBCB0;
+    border-radius: 50px;
     transition: background-color 0.3s, color 0.3s;
     display: inline;
     margin-left: 30px;
   }
   
   .react-tabs__tab--selected {
-    background-color: #007bff;
+    background-color: #7BBCB0;
     color: white;
     font-weight: bold;
-    border-color: #007bff;
-    border-radius: 10px;
+    border: 1px solid #7BBCB0;
   }
   
   .react-tabs__tab--disabled {
@@ -23,7 +22,9 @@
   }
   
   .react-tabs__tab:hover {
-    background-color: #f0f0f0;
+    background-color: #7BBCB0;
+    color: white;
+    border-radius: 50px;
   }
   
   .react-tabs__tab-panel {
