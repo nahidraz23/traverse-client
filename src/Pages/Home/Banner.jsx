@@ -9,6 +9,9 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import bannerBG1 from '../../assets/bannerImages/b1.jpeg'
+import bannerBG2 from '../../assets/bannerImages/b2.jpg'
+import bannerBG3 from '../../assets/bannerImages/b3.jpg'
+import bannerBG4 from '../../assets/bannerImages/b4.jpg'
 
 const Banner = () => {
     return (
@@ -33,17 +36,17 @@ const Banner = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <div className='w-full h-[740px]'>
-                    <img src={bannerBG1} alt="" className='w-full h-[740px]' />
+                    <img src={bannerBG2} alt="" className='w-full h-[740px]' />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div className='w-full h-[740px]'>
-                    <img src={bannerBG1} alt="" className='w-full h-[740px]' />
+                    <img src={bannerBG3} alt="" className='w-full h-[740px]' />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div className='w-full h-[740px]'>
-                    <img src={bannerBG1} alt="" className='w-full h-[740px]' />
+                    <img src={bannerBG4} alt="" className='w-full h-[740px]' />
                 </div>
             </SwiperSlide>
         </Swiper>

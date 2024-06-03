@@ -44,9 +44,7 @@ const Navbar = () => {
                 console.log(error.message);
             })
     }
-
-    console.log(user)
-
+    
     return (
         <div className="navbar bg-base-100 fixed z-10 bg-opacity-50">
             <div className="navbar-start">
