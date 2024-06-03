@@ -52,7 +52,7 @@ const OurPackages = () => {
                     {
                         tourPackage.map((item, index) =>
                             <SwiperSlide key={index} >
-                                <div className='flex bg-white'>
+                                <div className='flex'>
                                     <PackageCard cardInfo={item}></PackageCard>
                                 </div>
                             </SwiperSlide>

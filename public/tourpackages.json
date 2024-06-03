@@ -15,14 +15,14 @@
     },
     {
       "type": "Cultural",
-      "title": "Historical Tour of Rome",
+      "title": "Historical Tour Rome",
       "image": "https://plus.unsplash.com/premium_photo-1664472706956-42f42184f7a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3VsdHVyYWwlMjB0b3VyaXNtfGVufDB8MHwwfHx8MA%3D%3D",
       "price": 1200.00,
       "date": "2024-09-15"
     },
     {
       "type": "Mountain",
-      "title": "Hiking in the Swiss Alps",
+      "title": "Hiking Swiss Alps",
       "image": "https://plus.unsplash.com/premium_photo-1661960937960-1883bf00f480?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8TW91bnRhaW4lMjB0b3VyaXNtfGVufDB8MHwwfHx8MA%3D%3D",
       "price": 1800.00,
       "date": "2024-06-20"

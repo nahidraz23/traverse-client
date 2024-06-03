@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { FaEnvelope, FaPowerOff, FaUser } from "react-icons/fa";
 import { MdAdminPanelSettings } from "react-icons/md";
+import logo from '../../assets/traverse_logo.jpeg';
 
 const Navbar = () => {
     const { user, signOutUser } = useAuth();
@@ -58,7 +59,12 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="text-3xl font-semibold text-white">Traverse</a>
+                <div className="flex items-center gap-1">
+                    <div>
+                        <img src={logo} alt="" className="w-6"/>
+                    </div>
+                    <a className="text-3xl font-semibold text-white">Traverse</a>
+                </div>
             </div>
 
             <div className="navbar-end">

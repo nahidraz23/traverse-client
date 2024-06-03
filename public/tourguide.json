@@ -8,19 +8,7 @@
       "phone_number": "+1234567890",
       "language": ["English", "Spanish"],
       "experience": "5 years",
-      "expertise": "Historical Tours",
-      "reviews": [
-        {
-          "client_name": "Michael Brown",
-          "review": "Alice is very knowledgeable and friendly. Highly recommended!",
-          "rating": 5
-        },
-        {
-          "client_name": "Emily Clark",
-          "review": "Great experience! Alice made the tour unforgettable.",
-          "rating": 4.8
-        }
-      ]
+      "expertise": "Historical Tours"
     },
     {
       "name": "John Smith",
@@ -31,19 +19,7 @@
       "phone_number": "+1987654321",
       "language": ["English", "French"],
       "experience": "10 years",
-      "expertise": "Adventure Tours",
-      "reviews": [
-        {
-          "client_name": "Anna White",
-          "review": "John's adventure tours are thrilling and well-organized.",
-          "rating": 4.9
-        },
-        {
-          "client_name": "David Green",
-          "review": "Amazing tour guide with great energy!",
-          "rating": 5
-        }
-      ]
+      "expertise": "Adventure Tours"
     },
     {
       "name": "Maria Garcia",
@@ -54,19 +30,7 @@
       "phone_number": "+1122334455",
       "language": ["English", "Portuguese"],
       "experience": "8 years",
-      "expertise": "Cultural Tours",
-      "reviews": [
-        {
-          "client_name": "Sophia Martinez",
-          "review": "Maria's cultural tours are insightful and engaging.",
-          "rating": 4.7
-        },
-        {
-          "client_name": "James Lee",
-          "review": "Learned a lot and had a fantastic time with Maria.",
-          "rating": 4.8
-        }
-      ]
+      "expertise": "Cultural Tours"
     },
     {
       "name": "Robert Williams",
@@ -77,19 +41,7 @@
       "phone_number": "+1098765432",
       "language": ["English", "German"],
       "experience": "15 years",
-      "expertise": "City Tours",
-      "reviews": [
-        {
-          "client_name": "Olivia Hernandez",
-          "review": "Robert's city tours are the best. Very informative!",
-          "rating": 5
-        },
-        {
-          "client_name": "William Moore",
-          "review": "Had an amazing time exploring the city with Robert.",
-          "rating": 4.9
-        }
-      ]
+      "expertise": "City Tours"
     },
     {
       "name": "Linda Davis",
@@ -100,19 +52,7 @@
       "phone_number": "+1222333444",
       "language": ["English", "Italian"],
       "experience": "7 years",
-      "expertise": "Wine Tours",
-      "reviews": [
-        {
-          "client_name": "Liam Wilson",
-          "review": "Linda's wine tours are fantastic. A great experience!",
-          "rating": 4.8
-        },
-        {
-          "client_name": "Emma Thompson",
-          "review": "Loved the wine tour with Linda. Highly recommend!",
-          "rating": 4.7
-        }
-      ]
+      "expertise": "Wine Tours"
     },
     {
       "name": "David Martinez",
@@ -123,19 +63,7 @@
       "phone_number": "+1333444555",
       "language": ["English", "Japanese"],
       "experience": "6 years",
-      "expertise": "Nature Tours",
-      "reviews": [
-        {
-          "client_name": "Isabella Lopez",
-          "review": "David's nature tours are simply amazing. A must-try!",
-          "rating": 5
-        },
-        {
-          "client_name": "Ethan Anderson",
-          "review": "Incredible experience exploring nature with David.",
-          "rating": 4.9
-        }
-      ]
+      "expertise": "Nature Tours"
     }
   ]
   
