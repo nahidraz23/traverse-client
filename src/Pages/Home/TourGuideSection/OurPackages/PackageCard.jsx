@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const PackageCard = ({ cardInfo }) => {
 
-    const { type, title, image, price, date } = cardInfo;
+    const { type, title, image, price, date, _id } = cardInfo;
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -29,7 +29,7 @@ const PackageCard = ({ cardInfo }) => {
                         <FaDollarSign></FaDollarSign>
                         {price}
                     </p>
-                    <Link to={'/packageDetails'}><button className="btn bg-primary-color font-mulish font-semibold">View Package</button></Link>
+                    <Link to={`/packageDetails/${_id}`}><button className="btn bg-primary-color font-mulish font-semibold">View Package</button></Link>
                 </div>
             </div>
         </div>

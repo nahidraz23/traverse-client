@@ -1,4 +1,5 @@
 import PhotoAlbum from "react-photo-album";
+import { useLoaderData } from "react-router-dom";
 
 const photos1 = [
     {
@@ -37,6 +38,8 @@ const photos2 = [
 
 const PackageDetails = () => {
 
+    const packageData = useLoaderData();
+    console.log(packageData);
 
     return (
         <div className="min-h-[calc(100vh-358px)] ">

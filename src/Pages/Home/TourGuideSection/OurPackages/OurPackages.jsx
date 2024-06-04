@@ -7,18 +7,13 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
-import { useEffect, useState } from 'react';
 import PackageCard from './PackageCard';
 import { Link } from 'react-router-dom';
+import usePackage from '../../../../hooks/usePackage';
 
 const OurPackages = () => {
-    const [tourPackage, setTourPackage] = useState([]);
-
-    useEffect(() => {
-        fetch('/tourpackages.json')
-            .then(res => res.json())
-            .then(data => setTourPackage(data))
-    }, [])
+    
+    const [tourPackage] = usePackage();
 
     return (
         <div className=''>

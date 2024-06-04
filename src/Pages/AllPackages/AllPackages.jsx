@@ -1,17 +1,8 @@
+import usePackage from "../../hooks/usePackage";
 import PackageCard from "../Home/TourGuideSection/OurPackages/PackageCard";
-import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const AllPackages = () => {
-    const axiosPublic = useAxiosPublic();
-
-    const {data : tourPackage = [] } = useQuery({
-        queryKey: ['tourPackage'],
-        queryFn: async () => {
-            const res = await axiosPublic.get('/packageDetails')
-            return res.data;
-        }
-    })
+    const [tourPackage] = usePackage();    
 
     return (
         <div className="min-h-[calc(100vh-278px)]">

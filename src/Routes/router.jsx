@@ -28,8 +28,9 @@ export const router = createBrowserRouter([
                 element: <AllPackages></AllPackages>
             },
             {
-                path: '/packageDetails',
-                element: <PackageDetails></PackageDetails>
+                path: '/packageDetails/:id',
+                element: <PackageDetails></PackageDetails>,
+                loader: ({params}) => fetch(`http://localhost:5300/packageDetails/${params.id}`)
             }
         ]
     }
