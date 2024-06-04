@@ -3,10 +3,6 @@ import useAuth from "../../../../hooks/useAuth";
 const UserProfile = () => {
     const { user } = useAuth();
 
-
-
-    console.log(user)
-
     return (
         <div className="card shadow-xl max-w-md mx-auto my-auto">
             <div className="my-10">

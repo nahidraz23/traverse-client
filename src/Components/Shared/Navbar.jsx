@@ -61,7 +61,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center gap-1">
                     <div>
-                        <img src={logo} alt="" className="w-6"/>
+                        <img src={logo} alt="" className="w-6" />
                     </div>
                     <a className="text-3xl font-semibold text-white">Traverse</a>
                 </div>
@@ -92,10 +92,12 @@ const Navbar = () => {
                                     </div>
                                 </summary>
                                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                                    <li><div className="flex gap-2 items-center ">
-                                        <MdAdminPanelSettings></MdAdminPanelSettings>
-                                        <Link to={'/dashboard'}>Dashboard</Link>
-                                    </div></li>
+                                    <Link to={'/dashboard'}>
+                                        <li><div className="flex gap-2 items-center ">
+                                            <MdAdminPanelSettings></MdAdminPanelSettings>
+                                            Dashboard
+                                        </div></li>
+                                    </Link>
                                     <li>
                                         <div className="flex gap-2 items-center">
                                             <FaUser className="text-green-500"></FaUser>
