@@ -9,8 +9,6 @@ const MeetTourGuides = () => {
             .then(data => setTourGuides(data))
     }, [])
 
-    console.log(tourGuides);
-
     return (
         <div>
             <div className="overflow-x-auto">
@@ -57,7 +55,7 @@ const MeetTourGuides = () => {
                                         <button className="btn btn-sm"> View Details</button>
                                     </th>
                                 </tr>
-                        )}
+                            )}
                     </tbody>
                 </table>
             </div>

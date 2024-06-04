@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 import PackageCard from './PackageCard';
+import { Link } from 'react-router-dom';
 
 const OurPackages = () => {
     const [tourPackage, setTourPackage] = useState([]);
@@ -50,18 +51,17 @@ const OurPackages = () => {
             >
                 <div>
                     {
-                        tourPackage.map((item, index) =>
+                        tourPackage.slice(0,6).map((item, index) =>
                             <SwiperSlide key={index} >
-                                <div className='flex'>
+                                <div className='flex m-2'>
                                     <PackageCard cardInfo={item}></PackageCard>
                                 </div>
                             </SwiperSlide>
                         )
                     }
                 </div>
-
-
             </Swiper>
+            <Link to={'/allpackages'}><button className='btn bg-secondary-color text-white mt-5'>All Package</button></Link>
         </div>
     );
 };

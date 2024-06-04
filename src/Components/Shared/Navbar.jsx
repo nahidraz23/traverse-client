@@ -9,7 +9,7 @@ const Navbar = () => {
     const { user, signOutUser } = useAuth();
 
     const navLinks = (
-        <div className="flex gap-9 text-white font-semibold text-xl">
+        <div className="flex flex-col md:flex-row gap-9 text-black md:text-white font-semibold text-xl">
             <NavLink><li>Home</li></NavLink>
             <NavLink><li>Community</li></NavLink>
             <NavLink><li>Blogs</li></NavLink>

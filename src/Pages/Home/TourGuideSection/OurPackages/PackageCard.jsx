@@ -1,5 +1,6 @@
 import { BiCategory } from "react-icons/bi";
 import { FaCalendarAlt, FaDollarSign } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const PackageCard = ({ cardInfo }) => {
 
@@ -28,7 +29,7 @@ const PackageCard = ({ cardInfo }) => {
                         <FaDollarSign></FaDollarSign>
                         {price}
                     </p>
-                    <button className="btn btn-primary btn-sm font-mulish font-semibold">View Package</button>
+                    <Link to={'/packageDetails'}><button className="btn bg-primary-color font-mulish font-semibold">View Package</button></Link>
                 </div>
             </div>
         </div>

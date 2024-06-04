@@ -12,23 +12,41 @@ import { Link } from "react-router-dom";
 
 const TourTypeSection = () => {
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto text-center">
             <div>
                 <SectionHeading
                     heading={"Tour Types"}
                     subHeading={"Explore diverse tour types, from adventure and cultural to luxury and family-friendly, each offering unique and unforgettable experiences"}
                 ></SectionHeading>
             </div>
-            <div>
-                <Swiper
-                    slidesPerView={3}
-                    spaceBetween={30}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    modules={[Pagination]}
-                    className="mySwiper"
-                >
+            <div >
+            <Swiper
+                slidesPerView={1}
+                spaceBetween={10}
+                pagination={{
+                    clickable: true,
+                }}
+                breakpoints={{
+                    '@0.00': {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    '@0.75': {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    '@1.00': {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                    '@1.50': {
+                        slidesPerView: 4,
+                        spaceBetween: 50,
+                    },
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
                     <SwiperSlide>
                         {/* Adventure */}
                         <Link>
