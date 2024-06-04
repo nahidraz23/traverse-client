@@ -6,7 +6,7 @@
       "gender": "Female",
       "email": "alice.johnson@example.com",
       "phone_number": "+1234567890",
-      "language": ["English", "Spanish"],
+      "language": "English",
       "experience": "5 years",
       "expertise": "Historical Tours"
     },
@@ -17,7 +17,7 @@
       "gender": "Male",
       "email": "john.smith@example.com",
       "phone_number": "+1987654321",
-      "language": ["English", "French"],
+      "language": "English",
       "experience": "10 years",
       "expertise": "Adventure Tours"
     },
@@ -28,7 +28,7 @@
       "gender": "Female",
       "email": "maria.garcia@example.com",
       "phone_number": "+1122334455",
-      "language": ["English", "Portuguese"],
+      "language": "English",
       "experience": "8 years",
       "expertise": "Cultural Tours"
     },
@@ -39,7 +39,7 @@
       "gender": "Male",
       "email": "robert.williams@example.com",
       "phone_number": "+1098765432",
-      "language": ["English", "German"],
+      "language": "English",
       "experience": "15 years",
       "expertise": "City Tours"
     },
@@ -50,7 +50,7 @@
       "gender": "Female",
       "email": "linda.davis@example.com",
       "phone_number": "+1222333444",
-      "language": ["English", "Italian"],
+      "language": "English",
       "experience": "7 years",
       "expertise": "Wine Tours"
     },
@@ -61,7 +61,7 @@
       "gender": "Male",
       "email": "david.martinez@example.com",
       "phone_number": "+1333444555",
-      "language": ["English", "Japanese"],
+      "language": "English",
       "experience": "6 years",
       "expertise": "Nature Tours"
     }

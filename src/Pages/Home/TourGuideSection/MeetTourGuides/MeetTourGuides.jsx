@@ -1,13 +1,8 @@
-import { useEffect, useState } from "react";
+import useGuides from "../../../../hooks/useGuides";
 
 const MeetTourGuides = () => {
-    const [tourGuides, setTourGuides] = useState([]);
+    const [guides] = useGuides();
 
-    useEffect(() => {
-        fetch('/tourguide.json')
-            .then(res => res.json())
-            .then(data => setTourGuides(data))
-    }, [])
 
     return (
         <div>
@@ -28,7 +23,7 @@ const MeetTourGuides = () => {
                     </thead>
                     <tbody>
                         {
-                            tourGuides.map((guide, index) =>
+                            guides.map((guide, index) =>
                                 <tr key={index}>
                                     <th>
                                         {index + 1}

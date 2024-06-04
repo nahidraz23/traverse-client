@@ -6,8 +6,8 @@ const AllPackages = () => {
 
     return (
         <div className="min-h-[calc(100vh-278px)]">
-            <div className="my-16">
-                <h1 className="text-center text-3xl font-bold">All packages</h1>
+            <div className="pt-20">
+                <h1 className="text-center text-3xl font-bold my-5">All packages</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
                 {
