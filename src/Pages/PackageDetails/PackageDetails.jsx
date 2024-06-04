@@ -69,7 +69,7 @@ const PackageDetails = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                    title: "Deleted!",
+                    title: "Successful",
                     text: "Your booking is confirmed successfully",
                     icon: "success"
                 });
