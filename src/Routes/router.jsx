@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AllPackages from "../Pages/AllPackages/AllPackages";
 import PackageDetails from "../Pages/PackageDetails/PackageDetails";
+import TourGuidesProfile from "../Pages/TourGuidesProfile/TourGuidesProfile";
 
 export const router = createBrowserRouter([
     {
@@ -31,6 +32,11 @@ export const router = createBrowserRouter([
                 path: '/packageDetails/:id',
                 element: <PackageDetails></PackageDetails>,
                 loader: ({params}) => fetch(`http://localhost:5300/packageDetails/${params.id}`)
+            },
+            {
+                path: '/guideDetails/:id',
+                element: <TourGuidesProfile></TourGuidesProfile>,
+                loader: ({params}) => fetch(`http://localhost:5300/guides/${params.id}`)
             }
         ]
     }

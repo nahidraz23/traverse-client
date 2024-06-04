@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import useGuides from "../../../../hooks/useGuides";
 
 const MeetTourGuides = () => {
     const [guides] = useGuides();
-
 
     return (
         <div>
@@ -17,6 +17,7 @@ const MeetTourGuides = () => {
                             <th>Image</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Expertise</th>
                             <th>Experience</th>
                             <th>Action</th>
                         </tr>
@@ -44,10 +45,13 @@ const MeetTourGuides = () => {
                                         <p>{guide.email}</p>
                                     </td>
                                     <td>
+                                        <p>{guide.expertise}</p>
+                                    </td>
+                                    <td>
                                         <p>{guide.experience}</p>
                                     </td>
                                     <th>
-                                        <button className="btn btn-sm"> View Details</button>
+                                        <Link to={`/guideDetails/${guide._id}`}><button className="btn btn-sm"> View Details</button></Link>
                                     </th>
                                 </tr>
                             )}
