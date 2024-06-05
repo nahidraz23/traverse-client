@@ -100,8 +100,18 @@ const ManageUsers = () => {
                                             </p>
                                         </td>
                                         <td className="text-center space-x-2">
-                                            <button className="btn btn-sm">Make Tour Guide</button>
-                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm">Make Admin</button>
+                                            {
+                                                !user?.role ?
+                                                    <>
+                                                        <button className="btn btn-sm">Make Tour Guide</button>
+                                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm">Make Admin</button>
+                                                    </>
+                                                    :
+                                                    <>
+
+                                                    </>
+                                            }
+
                                         </td>
                                     </tr>
                                 )}
