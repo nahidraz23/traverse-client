@@ -5,7 +5,6 @@ import PhotoAlbum from "react-photo-album";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { MdAccessTime, MdOutlineHealthAndSafety } from "react-icons/md";
 import MeetTourGuides from "../Home/TourGuideSection/MeetTourGuides/MeetTourGuides";
-import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { Controller, useForm } from "react-hook-form"
 
@@ -59,10 +58,9 @@ const PackageDetails = () => {
         register,
         handleSubmit,
         control,
-        formState: { errors },
+        // formState: { errors },
     } = useForm()
 
-    // const [startDate, setStartDate] = useState(new Date(date));
     const { user } = useAuth();
     const navigate = useNavigate();
 
@@ -76,7 +74,8 @@ const PackageDetails = () => {
             photoURL: data.photoURL,
             price: parseInt(data.price),
             guide: data.guide, 
-            title
+            title,
+            status : 'In Review'
         }
 
         Swal.fire({

@@ -9,6 +9,8 @@ const DashboardLayout = () => {
         setOpen(!open);
     }
 
+    const isAdmin = true;
+
     return (
         <div>
             <div className="drawer z-10">
@@ -17,12 +19,27 @@ const DashboardLayout = () => {
                     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-52 md:w-96 min-h-full bg-base-200 text-base-content pt-12">
                         {/* Sidebar content here */}
-                        <NavLink to={'/dashboard/userprofile'}><li className="md:text-2xl p-4">My Profile</li></NavLink>
-                        <NavLink to={'/dashboard/userbookings'}><li className="md:text-2xl p-4">My Bookings</li></NavLink>
-                        <NavLink to={'/dashboard/userwishlist'}><li className="md:text-2xl p-4">My Wishlist</li></NavLink>
-                        <NavLink to={'/dashboard/requestadmin'}><li className="md:text-2xl p-4">Request to Admin</li></NavLink>
-                        <div className="divider divider-info"></div>
-                        <NavLink to={'/'}><li className="md:text-2xl p-4">Home</li></NavLink>
+
+                        {
+                            isAdmin ?
+                                <>
+                                    <NavLink to={"/dashboard/adminprofile"} className="md:text-2xl p-4"><li>My Profile</li></NavLink>
+                                    <NavLink to={"/dashboard/addpackage"} className="md:text-2xl p-4"><li>Add Package</li></NavLink>
+                                    <NavLink to={"/dashboard/manageusers"} className="md:text-2xl p-4"><li>Manage Users</li></NavLink>
+                                    <div className="divider divider-info"></div>
+                                    <NavLink to={'/'}><li className="md:text-2xl p-4">Home</li></NavLink>
+                                </>
+                                :
+                                <>
+                                    <NavLink to={'/dashboard/userprofile'}><li className="md:text-2xl p-4">My Profile</li></NavLink>
+                                    <NavLink to={'/dashboard/userbookings'}><li className="md:text-2xl p-4">My Bookings</li></NavLink>
+                                    <NavLink to={'/dashboard/userwishlist'}><li className="md:text-2xl p-4">My Wishlist</li></NavLink>
+                                    <NavLink to={'/dashboard/requestadmin'}><li className="md:text-2xl p-4">Request to Admin</li></NavLink>
+                                    <div className="divider divider-info"></div>
+                                    <NavLink to={'/'}><li className="md:text-2xl p-4">Home</li></NavLink>
+                                </>
+                        }
+
                     </ul>
                 </div>
                 <div className={`${open ? 'ml-52 md:ml-96 drawer-content sticky delay-150' : 'delay-200'}`}>

@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form"
 import useAuth from "../../hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Login = () => {
     const { login, googleLogin } = useAuth();
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
 
     const {
         register,
@@ -31,12 +33,23 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(res => {
-                Swal.fire({
-                    icon: "success",
-                    title: `Logged in as ${res.user?.displayName}`,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                const userInfo = {
+                    email: res.user?.email,
+                    name: res.user?.displayName,
+                    photoURL: res.user?.photoURL
+                }
+
+                axiosPublic.post('/users', userInfo)
+                    .then(result => {
+                        if (result.data.insertedId) {
+                            Swal.fire({
+                                icon: "success",
+                                title: `Logged in as ${res.user?.displayName}`,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    })
                 navigate('/');
             })
     }

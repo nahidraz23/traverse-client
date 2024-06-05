@@ -10,6 +10,8 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import UserProfile from "../Pages/Dashboard/RegularDashboard/UserProfile/UserProfile";
 import MyWishList from "../Pages/Dashboard/RegularDashboard/MyWishList/MyWishList";
 import MyBookings from "../Pages/Dashboard/RegularDashboard/MyBookings/MyBookings";
+import AdminProfile from "../Pages/Dashboard/AdminDashboard/AdminProfile/AdminProfile";
+import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers/ManageUsers";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +50,17 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>,
         children: [
+            // admin dasboard
+            {
+                path: '/dashboard/adminprofile',
+                element: <AdminProfile></AdminProfile>
+            },
+            {
+                path: '/dashboard/manageusers',
+                element: <ManageUsers></ManageUsers>
+            },
+
+            // normal user dashboard
             {
                 path: '/dashboard/userprofile',
                 element: <UserProfile></UserProfile>
