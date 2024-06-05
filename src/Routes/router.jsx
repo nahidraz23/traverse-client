@@ -9,6 +9,7 @@ import TourGuidesProfile from "../Pages/TourGuidesProfile/TourGuidesProfile";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import UserProfile from "../Pages/Dashboard/RegularDashboard/UserProfile/UserProfile";
 import MyWishList from "../Pages/Dashboard/RegularDashboard/MyWishList/MyWishList";
+import MyBookings from "../Pages/Dashboard/RegularDashboard/MyBookings/MyBookings";
 
 export const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/userwishlist',
                 element: <MyWishList></MyWishList>
+            },
+            {
+                path: '/dashboard/userbookings',
+                element: <MyBookings></MyBookings>
             }
         ]
     }

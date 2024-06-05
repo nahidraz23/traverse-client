@@ -2,15 +2,18 @@ import { BiCategory } from "react-icons/bi";
 import { FaCalendarAlt, FaDollarSign, FaMobileAlt } from "react-icons/fa";
 import { AiOutlineStop } from "react-icons/ai";
 import PhotoAlbum from "react-photo-album";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { MdAccessTime, MdOutlineHealthAndSafety } from "react-icons/md";
 import MeetTourGuides from "../Home/TourGuideSection/MeetTourGuides/MeetTourGuides";
-import React, { useState } from "react";
+import { useState } from "react";
 import DatePicker from "react-datepicker";
+import { Controller, useForm } from "react-hook-form"
 
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import moment from "moment/moment";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const photos1 = [
     {
@@ -50,13 +53,31 @@ const photos2 = [
 const PackageDetails = () => {
     const packageData = useLoaderData();
     const { date, image, price, title, type } = packageData;
+    const axiosSecure = useAxiosSecure();
 
-    const [startDate, setStartDate] = useState(new Date());
+    const {
+        register,
+        handleSubmit,
+        control,
+        formState: { errors },
+    } = useForm()
+
+    // const [startDate, setStartDate] = useState(new Date(date));
     const { user } = useAuth();
+    const navigate = useNavigate();
 
     // handle book now
-    const handleBookNow = (e) => {
-        e.preventDefault();
+    const onSubmit = (data) => {
+
+        const info = {
+            date: moment().subtract(10, 'days').calendar(),
+            name: data.name,
+            email: data.email,
+            photoURL: data.photoURL,
+            price: parseInt(data.price),
+            guide: data.guide, 
+            title
+        }
 
         Swal.fire({
             title: "Are you sure?",
@@ -68,11 +89,24 @@ const PackageDetails = () => {
             confirmButtonText: "Confirm Booking"
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Successful",
-                    text: "Your booking is confirmed successfully",
-                    icon: "success"
-                });
+                axiosSecure.post('/bookings', info)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            Swal.fire({
+                                title: "Successful",
+                                text: "Your booking is confirmed successfully",
+                                icon: "success",
+                                confirmButtonText: "Goto My Bookings",
+                                showCancelButton: true,
+                                cancelButtonText: "Ok"
+
+                            }).then(res => {
+                                if (res.isConfirmed) {
+                                    navigate('/dashboard/userbookings')
+                                }
+                            })
+                        }
+                    })
             }
         });
     }
@@ -298,39 +332,68 @@ const PackageDetails = () => {
                         <div className="hero">
                             <div className="hero-content flex-col">
                                 <div className="card shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
-                                    <form className="card-body">
+                                    <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">Name</span>
                                             </label>
-                                            <input readOnly defaultValue={user?.displayName} type="text" placeholder="name" className="input input-bordered" required />
+                                            <input readOnly {...register("name")} defaultValue={user?.displayName} type="text" placeholder="name" className="input input-bordered" required />
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">Email</span>
                                             </label>
-                                            <input readOnly defaultValue={user?.email} type="email" placeholder="Email" className="input input-bordered" required />
+                                            <input readOnly {...register("email")} defaultValue={user?.email} type="email" placeholder="Email" className="input input-bordered" required />
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">PhotoURL</span>
                                             </label>
-                                            <input readOnly defaultValue={user?.photoURL} type="text" placeholder="photoURL" className="input input-bordered" required />
+                                            <input readOnly {...register("photoURL")} defaultValue={user?.photoURL} type="text" placeholder="photoURL" className="input input-bordered" required />
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">Price</span>
                                             </label>
-                                            <input readOnly defaultValue={price} type="number" placeholder="price" className="input input-bordered" required />
+                                            <input readOnly {...register("price")} defaultValue={price} type="number" placeholder="price" className="input input-bordered" required />
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">Date</span>
                                             </label>
-                                            <DatePicker readOnly selected={date} onChange={(date) => setStartDate(date)} className="input input-bordered" />
+                                            <Controller
+                                                control={control}
+                                                name="date"
+                                                render={({ field }) => (
+                                                    <DatePicker
+                                                        defaultValue={date}
+                                                        selected={date}
+                                                        onChange={(date) => field.onChange(date)}
+                                                        selectedDates={field.value}
+                                                        isClearable
+                                                        placeholderText="I have been cleared!"
+                                                        className="input input-bordered"
+                                                    />
+                                                )
+                                                }
+                                            ></Controller>
+                                        </div>
+                                        <div>
+                                            <label className="label">
+                                                <span className="label-text">Tour Guide</span>
+                                            </label>
+                                            <select {...register("guide")} className="select select-bordered w-full max-w-xs">
+                                                <option disabled selected>Select tour guide</option>
+                                                <option value={'Alice Johnson'}>Alice Johnson</option>
+                                                <option value={'John Smith'}>John Smith</option>
+                                                <option value={'Maria Garcia'}>Maria Garcia</option>
+                                                <option value={'Robert Williams'}>Robert Williams</option>
+                                                <option value={'Linda Davis'}>Linda Davis</option>
+                                                <option value={'David Martinez'}>David Martinez</option>
+                                            </select>
                                         </div>
                                         <div className="form-control mt-6">
-                                            <button onClick={handleBookNow} className="btn btn-primary">Book Now</button>
+                                            <button className="btn btn-primary">Book Now</button>
                                         </div>
                                     </form>
                                 </div>
