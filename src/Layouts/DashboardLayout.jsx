@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { RiAlignJustify, RiCloseLargeFill } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../hooks/useAdmin";
 
 const DashboardLayout = () => {
     const [open, setOpen] = useState(false);
+    const [isAdmin] = useAdmin();
 
     const handleDrawer = () => {
         setOpen(!open);
     }
+    // console.log(isAdmin)
 
-    const isAdmin = true;
+    // const isAdmin = true;
 
     return (
         <div>
