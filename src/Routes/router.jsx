@@ -12,6 +12,7 @@ import MyWishList from "../Pages/Dashboard/RegularDashboard/MyWishList/MyWishLis
 import MyBookings from "../Pages/Dashboard/RegularDashboard/MyBookings/MyBookings";
 import AdminProfile from "../Pages/Dashboard/AdminDashboard/AdminProfile/AdminProfile";
 import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers/ManageUsers";
+import RequestAdmin from "../Pages/Dashboard/RegularDashboard/RequestAdmin/RequestAdmin";
 
 export const router = createBrowserRouter([
     {
@@ -50,7 +51,7 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>,
         children: [
-            // admin dasboard
+            // admin dashboard
             {
                 path: '/dashboard/adminprofile',
                 element: <AdminProfile></AdminProfile>
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/userbookings',
                 element: <MyBookings></MyBookings>
+            },
+            {
+                path: '/dashboard/requestadmin',
+                element: <RequestAdmin></RequestAdmin>
             }
         ]
     }
