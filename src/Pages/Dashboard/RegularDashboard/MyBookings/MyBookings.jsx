@@ -1,8 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAuth from "../../../../hooks/useAuth";
-import { Link } from "react-router-dom";
-import { FaEye, FaTrash } from "react-icons/fa";
 
 const MyBookings = () => {
     const axiosSecure = useAxiosSecure();
@@ -61,12 +59,18 @@ const MyBookings = () => {
                                             <p>{item.status}</p>
                                         </td>
                                         <td className="text-center space-x-2">
-                                            <button className="btn btn-circle">
-                                                Pay
-                                            </button>
-                                            <button className="btn">
-                                                <p className="p-2">Cancel</p>
-                                            </button>
+                                            {
+                                                item.status === "accepted" &&
+                                                <button className="btn btn-circle">
+                                                    Pay
+                                                </button>
+                                            }
+                                            {
+                                                item.status === 'In Review' &&
+                                                <button className="btn">
+                                                    <p className="p-2">Cancel</p>
+                                                </button>
+                                            }
                                         </td>
                                     </tr>
                                 )}

@@ -7,7 +7,7 @@ const AssignedTour = () => {
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
 
-    const { data: bookings = [] } = useQuery({
+    const { data: bookings = [], refetch } = useQuery({
         queryKey: ['bookings'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/bookings?guide=${user?.displayName}`);
@@ -35,6 +35,32 @@ const AssignedTour = () => {
                         icon: "success"
                     });
                 }
+                refetch();
+            }
+        });
+    }
+
+    // handle reject 
+    const handleReject = id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Reject!"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                const res = await axiosSecure.patch(`/mybookings/${id}`);
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: "Rejected!",
+                        text: "Request Rejected.",
+                        icon: "success"
+                    });
+                }
+                refetch();
             }
         });
     }
@@ -81,14 +107,14 @@ const AssignedTour = () => {
                                         </td>
                                         <td className="text-center space-x-2">
                                             {
-                                                booking?.status === "accepted" ?
+                                                booking?.status === "accepted" || booking?.status === "rejected"?
                                                     <>
                                                         <p>{booking?.status}</p>
                                                     </>
                                                     :
                                                     <>
                                                         <button onClick={() => handleAccept(booking._id)} className="btn btn-sm"> Accept</button>
-                                                        <button className="btn btn-sm"> Reject</button>
+                                                        <button onClick={() => handleReject(booking._id)} className="btn btn-sm"> Reject</button>
                                                     </>
                                             }
                                         </td>

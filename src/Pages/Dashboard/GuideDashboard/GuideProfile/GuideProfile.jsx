@@ -6,15 +6,13 @@ const GuideProfile = () => {
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
 
-    const { data: guide } = useQuery({
-        queryKey: ['guide'],
+    const { data: tourGuide = {}} = useQuery({
+        queryKey: ['tourGuide'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/tourguides?email=${user?.email}`)
             return res.data;
         }
     })
-
-    const { age, name, email, experience, expertise, gender, image, language, phone_number } = guide;
 
     return (
         <div className="min-h-[calc(100vh-278px)] pt-20 container mx-auto">
@@ -25,7 +23,7 @@ const GuideProfile = () => {
                 <div className="card">
                     <div className="avatar justify-center">
                         <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src={image} />
+                            <img src={tourGuide?.image} />
                         </div>
                     </div>
                     <div className="card-body">
@@ -35,42 +33,42 @@ const GuideProfile = () => {
                                     {/* row 1 */}
                                     <tr className="bg-base-200">
                                         <td>Name:</td>
-                                        <td className="text-center">{name}</td>
+                                        <td className="text-center">{tourGuide?.name}</td>
                                     </tr>
                                     {/* row 2 */}
                                     <tr className="bg-base-200">
                                         <td>Age:</td>
-                                        <td className="text-center">{age}</td>
+                                        <td className="text-center">{tourGuide?.age}</td>
                                     </tr>
                                     {/* row 3 */}
                                     <tr className="bg-base-200">
                                         <td>Gender:</td>
-                                        <td className="text-center">{gender}</td>
+                                        <td className="text-center">{tourGuide?.gender}</td>
                                     </tr>
                                     {/* row 4 */}
                                     <tr className="bg-base-200">
                                         <td>Experience:</td>
-                                        <td className="text-center">{experience}</td>
+                                        <td className="text-center">{tourGuide?.experience}</td>
                                     </tr>
                                     {/* row 5 */}
                                     <tr className="bg-base-200">
                                         <td>Expertise:</td>
-                                        <td className="text-center">{expertise}</td>
+                                        <td className="text-center">{tourGuide?.expertise}</td>
                                     </tr>
                                     {/* row 6 */}
                                     <tr className="bg-base-200">
                                         <td>Language:</td>
-                                        <td className="text-center">{language}</td>
+                                        <td className="text-center">{tourGuide?.language}</td>
                                     </tr>
                                     {/* row 7 */}
                                     <tr className="bg-base-200">
                                         <td>Phone:</td>
-                                        <td className="text-center">{phone_number}</td>
+                                        <td className="text-center">{tourGuide?.phone_number}</td>
                                     </tr>
                                     {/* row 8 */}
                                     <tr className="bg-base-200">
                                         <td>Email:</td>
-                                        <td className="text-center">{email}</td>
+                                        <td className="text-center">{tourGuide?.email}</td>
                                     </tr>
                                 </tbody>
                             </table>
