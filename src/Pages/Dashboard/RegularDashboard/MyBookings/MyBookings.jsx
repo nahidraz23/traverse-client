@@ -11,12 +11,10 @@ const MyBookings = () => {
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/bookings?email=${user?.email}`)
+            const res = await axiosSecure.get(`/mybookings?email=${user?.email}`)
             return res.data;
         }
     })
-
-    // console.log(bookings)
 
     return (
         <div>

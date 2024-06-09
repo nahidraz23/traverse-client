@@ -7,12 +7,12 @@ import { MdAccessTime, MdOutlineHealthAndSafety } from "react-icons/md";
 import MeetTourGuides from "../Home/TourGuideSection/MeetTourGuides/MeetTourGuides";
 import DatePicker from "react-datepicker";
 import { Controller, useForm } from "react-hook-form"
-
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import moment from "moment/moment";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 const photos1 = [
     {
@@ -54,6 +54,14 @@ const PackageDetails = () => {
     const { date, image, price, title, type } = packageData;
     const axiosSecure = useAxiosSecure();
 
+    const { data: guides = [] } = useQuery({
+        queryKey: ['guides'],
+        queryFn: async () => {
+            const res = axiosSecure.get('/bookings')
+            return res.data;
+        }
+    })
+
     const {
         register,
         handleSubmit,
@@ -73,9 +81,9 @@ const PackageDetails = () => {
             email: data.email,
             photoURL: data.photoURL,
             price: parseInt(data.price),
-            guide: data.guide, 
+            guide: data.guide,
             title,
-            status : 'In Review'
+            status: 'In Review'
         }
 
         Swal.fire({
@@ -383,12 +391,16 @@ const PackageDetails = () => {
                                             </label>
                                             <select {...register("guide")} className="select select-bordered w-full max-w-xs">
                                                 <option disabled selected>Select tour guide</option>
-                                                <option value={'Alice Johnson'}>Alice Johnson</option>
+                                                {
+                                                    guides.map(guide => <option key={guide._id} value={`${guide.name}`}>{guide.name}</option>)
+                                                }
+                                                {/* <option disabled selected>Select tour guide</option> */}
+                                                {/* <option value={'Alice Johnson'}>Alice Johnson</option>
                                                 <option value={'John Smith'}>John Smith</option>
                                                 <option value={'Maria Garcia'}>Maria Garcia</option>
                                                 <option value={'Robert Williams'}>Robert Williams</option>
                                                 <option value={'Linda Davis'}>Linda Davis</option>
-                                                <option value={'David Martinez'}>David Martinez</option>
+                                                <option value={'David Martinez'}>David Martinez</option> */}
                                             </select>
                                         </div>
                                         <div className="form-control mt-6">

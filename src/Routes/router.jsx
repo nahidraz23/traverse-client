@@ -14,6 +14,7 @@ import AdminProfile from "../Pages/Dashboard/AdminDashboard/AdminProfile/AdminPr
 import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers/ManageUsers";
 import RequestAdmin from "../Pages/Dashboard/RegularDashboard/RequestAdmin/RequestAdmin";
 import GuideProfile from "../Pages/Dashboard/GuideDashboard/GuideProfile/GuideProfile";
+import AssignedTour from "../Pages/Dashboard/GuideDashboard/AssignedTour/AssignedTour";
 
 export const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
             {
                 path: "/dashboard/guideprofile",
                 element: <GuideProfile></GuideProfile>
+            },
+            {
+                path: '/dashboard/assignedtour',
+                element: <AssignedTour></AssignedTour>
             },
 
             // normal user dashboard
