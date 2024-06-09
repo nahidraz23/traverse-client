@@ -42,6 +42,33 @@ const ManageUsers = () => {
         });
     }
 
+    // handle make tour guide
+    const handleMakeTourGuide = user => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Make tour guide"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.patch(`/tourguides/${user._id}`)
+                    .then(res => {
+                        if (res.data.modifiedCount > 0) {
+                            Swal.fire({
+                                title: "Sucessfull",
+                                text: `${user.name} is tour guide now.`,
+                                icon: "success"
+                            });
+                            refetch();
+                        }
+                    })
+            }
+        });
+    }
+
     return (
         <div>
             <div>
@@ -103,7 +130,7 @@ const ManageUsers = () => {
                                             {
                                                 !user?.role ?
                                                     <>
-                                                        <button className="btn btn-sm">Make Tour Guide</button>
+                                                        <button onClick={() => handleMakeTourGuide(user)} className="btn btn-sm">Make Tour Guide</button>
                                                         <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm">Make Admin</button>
                                                     </>
                                                     :
