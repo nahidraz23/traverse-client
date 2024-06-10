@@ -15,6 +15,8 @@ import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers/ManageUse
 import RequestAdmin from "../Pages/Dashboard/RegularDashboard/RequestAdmin/RequestAdmin";
 import GuideProfile from "../Pages/Dashboard/GuideDashboard/GuideProfile/GuideProfile";
 import AssignedTour from "../Pages/Dashboard/GuideDashboard/AssignedTour/AssignedTour";
+import PrivateRoute from "./PrivateRoute";
+import AddPackage from "../Pages/Dashboard/AdminDashboard/AddPackage/AddPackage";
 
 export const router = createBrowserRouter([
     {
@@ -39,12 +41,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/packageDetails/:id',
-                element: <PackageDetails></PackageDetails>,
+                element: <PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5300/packageDetails/${params.id}`)
             },
             {
                 path: '/guideDetails/:id',
-                element: <TourGuidesProfile></TourGuidesProfile>,
+                element: <PrivateRoute><TourGuidesProfile></TourGuidesProfile></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5300/guides/${params.id}`)
             }
         ]
@@ -62,33 +64,37 @@ export const router = createBrowserRouter([
                 path: '/dashboard/manageusers',
                 element: <ManageUsers></ManageUsers>
             },
+            {
+                path: '/dashboard/addpackage',
+                element: <AddPackage></AddPackage>
+            },
 
             // guide dashboard
             {
                 path: "/dashboard/guideprofile",
-                element: <GuideProfile></GuideProfile>
+                element: <PrivateRoute><GuideProfile></GuideProfile></PrivateRoute>
             },
             {
                 path: '/dashboard/assignedtour',
-                element: <AssignedTour></AssignedTour>
+                element: <PrivateRoute><AssignedTour></AssignedTour></PrivateRoute>
             },
 
             // normal user dashboard
             {
                 path: '/dashboard/userprofile',
-                element: <UserProfile></UserProfile>
+                element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
             },
             {
                 path: '/dashboard/userwishlist',
-                element: <MyWishList></MyWishList>
+                element: <PrivateRoute><MyWishList></MyWishList></PrivateRoute>
             },
             {
                 path: '/dashboard/userbookings',
-                element: <MyBookings></MyBookings>
+                element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
             },
             {
                 path: '/dashboard/requestadmin',
-                element: <RequestAdmin></RequestAdmin>
+                element: <PrivateRoute><RequestAdmin></RequestAdmin></PrivateRoute>
             }
         ]
     }
