@@ -7,34 +7,34 @@ Live Site:
 
 ## Features
 
-Expertly Curated Tours
+- Expertly Curated Tours
 Handpicked tours designed by travel experts to offer unique and memorable experiences.
 
-Personalized Itineraries
+- Personalized Itineraries
 Tailor-made travel plans customized to your preferences and interests.
 
-Insider Tips
+- Insider Tips
 Access to local secrets and insider knowledge to enhance your travel experience.
 
-Hidden Gems
+- Hidden Gems
 Discover off-the-beaten-path locations and lesser-known attractions.
 
-Cultural Experiences
+- Cultural Experiences
 Engage in authentic cultural activities and immerse yourself in local traditions.
 
-Stunning Destinations
+- Stunning Destinations
 Explore breathtaking landscapes and iconic landmarks around the world.
 
-User-Friendly Interface
+- User-Friendly Interface
 Easy-to-navigate website with intuitive design for seamless planning.
 
-Travel Resources
+- Travel Resources
 Comprehensive guides, travel tips, and essential information for every destination.
 
-Customer Support
+- Customer Support
 Dedicated support team to assist with travel planning and inquiries.
 
-Community Stories
+- Community Stories
 Read and share travel stories with a community of fellow explorers.
 
 ## Contributing
