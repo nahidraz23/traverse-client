@@ -49,7 +49,7 @@ const TourTypeSection = () => {
             >
                     <SwiperSlide>
                         {/* Adventure */}
-                        <Link>
+                        <Link to={`/tourtype/Adventure`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://plus.unsplash.com/premium_photo-1682390303496-4404d97c6b49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWR2ZW50dXJlJTIwdG91cnxlbnwwfHwwfHx8MA%3D%3D" alt="Shoes" /></figure>
                                 <div className="card-body my-12">
@@ -61,7 +61,7 @@ const TourTypeSection = () => {
                     </SwiperSlide>
                     {/* Cultural Tours */}
                     <SwiperSlide>
-                        <Link>
+                        <Link to={`/tourtype/Cultural`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://images.unsplash.com/photo-1611652951546-7dde1b5f804c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGN1bHR1cmFsJTIwdG91cnxlbnwwfDB8MHx8fDA%3D" alt="Shoes" /></figure>
                                 <div className="card-body my-12">
@@ -73,7 +73,7 @@ const TourTypeSection = () => {
                     </SwiperSlide>
                     {/* City tour */}
                     <SwiperSlide>
-                        <Link>
+                        <Link to={`/tourtype/City`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://plus.unsplash.com/premium_photo-1661885874118-09b795064a3c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2l0eSUyMHRvdXJ8ZW58MHwwfDB8fHww" alt="Shoes" /></figure>
                                 <div className="card-body my-12">
@@ -85,7 +85,7 @@ const TourTypeSection = () => {
                     </SwiperSlide>
                     {/* Nature tour */}
                     <SwiperSlide>
-                        <Link>
+                        <Link to={`/tourtype/Nature`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://plus.unsplash.com/premium_photo-1663040014450-11d8157ad539?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJlJTIwdG91cnxlbnwwfDB8MHx8fDA%3D" alt="Shoes" /></figure>
                                 <div className="card-body my-12">
@@ -97,7 +97,7 @@ const TourTypeSection = () => {
                     </SwiperSlide>
                     {/* Historical tour */}
                     <SwiperSlide>
-                        <Link>
+                        <Link to={`/tourtype/Historical`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://images.unsplash.com/photo-1619523439722-c27651e8e10e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhpc3RvcmljYWwlMjB0b3VyfGVufDB8MHwwfHx8MA%3D%3D" alt="Shoes" /></figure>
                                 <div className="card-body my-12">
@@ -109,7 +109,7 @@ const TourTypeSection = () => {
                     </SwiperSlide>
                     {/* Beach tour */}
                     <SwiperSlide>
-                        <Link>
+                        <Link to={`/tourtype/Beach`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://plus.unsplash.com/premium_photo-1661882523060-4222337302f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmVhY2glMjB0b3VyfGVufDB8MHwwfHx8MA%3D%3D" alt="Shoes" /></figure>
                                 <div className="card-body my-12">
@@ -121,7 +121,7 @@ const TourTypeSection = () => {
                     </SwiperSlide>
                     {/* Luxury tour */}
                     <SwiperSlide>
-                        <Link>
+                        <Link to={`/tourtype/Luxury`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://plus.unsplash.com/premium_photo-1661934381160-8b1f9ee981a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bHV4dXJ5JTIwdG91cnxlbnwwfDB8MHx8fDA%3D" alt="Shoes" /></figure>
                                 <div className="card-body my-12">
@@ -133,7 +133,7 @@ const TourTypeSection = () => {
                     </SwiperSlide>
                     {/* Eco tour */}
                     <SwiperSlide>
-                        <Link>
+                        <Link to={`/tourtype/Eco`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGVjbyUyMHRvdXJ8ZW58MHwwfDB8fHww" alt="Shoes" /></figure>
                                 <div className="card-body my-12">
@@ -145,7 +145,7 @@ const TourTypeSection = () => {
                     </SwiperSlide>
                     {/* Family tour */}
                     <SwiperSlide>
-                        <Link>
+                        <Link to={`/tourtype/Family`}>
                             <div className="card w-96 bg-base-100 shadow-xl image-full">
                                 <figure><img src="https://plus.unsplash.com/premium_photo-1708007650538-f2a9057b3841?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmFtaWx5JTIwdG91cnxlbnwwfDB8MHx8fDA%3D" alt="Shoes" /></figure>
                                 <div className="card-body my-12">

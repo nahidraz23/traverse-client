@@ -17,6 +17,7 @@ import GuideProfile from "../Pages/Dashboard/GuideDashboard/GuideProfile/GuidePr
 import AssignedTour from "../Pages/Dashboard/GuideDashboard/AssignedTour/AssignedTour";
 import PrivateRoute from "./PrivateRoute";
 import AddPackage from "../Pages/Dashboard/AdminDashboard/AddPackage/AddPackage";
+import TourTypeCard from "../Pages/Home/TourTypeSection/TourTypeCard/TourTypeCard";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +49,11 @@ export const router = createBrowserRouter([
                 path: '/guideDetails/:id',
                 element: <PrivateRoute><TourGuidesProfile></TourGuidesProfile></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5300/guides/${params.id}`)
+            },
+            {
+                path: '/tourtype/:type',
+                element: <TourTypeCard></TourTypeCard>,
+                loader: ({params}) => fetch(`http://localhost:5300/packages/${params.type}`)
             }
         ]
     },
