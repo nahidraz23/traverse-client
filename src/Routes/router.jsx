@@ -18,6 +18,7 @@ import AssignedTour from "../Pages/Dashboard/GuideDashboard/AssignedTour/Assigne
 import PrivateRoute from "./PrivateRoute";
 import AddPackage from "../Pages/Dashboard/AdminDashboard/AddPackage/AddPackage";
 import TourTypeCard from "../Pages/Home/TourTypeSection/TourTypeCard/TourTypeCard";
+import StoryDetails from "../Pages/Home/TouristStorySection/StoryDetails";
 
 export const router = createBrowserRouter([
     {
@@ -54,6 +55,11 @@ export const router = createBrowserRouter([
                 path: '/tourtype/:type',
                 element: <TourTypeCard></TourTypeCard>,
                 loader: ({params}) => fetch(`http://localhost:5300/packages/${params.type}`)
+            },
+            {
+                path: '/storydetails/:id',
+                element: <StoryDetails></StoryDetails>,
+                loader: ({params}) => fetch(`http://localhost:5300/stories/${params.id}`)
             }
         ]
     },

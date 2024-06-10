@@ -63,19 +63,23 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
-                            <input {...register("photoURL")} type="text" placeholder="photoURL" className="input input-bordered" required />
+                            <input {...register("photoURL", { required: "PhotoURLis required" })} type="text" placeholder="photoURL" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input {...register("email")} type="email" placeholder="email" className="input input-bordered" required />
+                            <input {...register("email", { required: "Email Address is required" })} type="email" placeholder="email" className="input input-bordered" required />
+
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input {...register("password")} type="password" placeholder="password" className="input input-bordered" required />
+                            <input {...register("password", { required: true, minLength: 6, maxLength: 20, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/ })} type="password" placeholder="password" className="input input-bordered" required />
+                            {errors.password?.type === "minLength" && <p className="text-red-500 text-center">Password length must be 6 charecter or more.</p>}
+                            {errors.password?.type === "maxLength" && <p className="text-red-500 text-center">Password length must be 6 charecter or more.</p>}
+                            {errors.password?.type === "pattern" && <p className="text-red-500 text-center">Password should contain 1 uppercase, 1 lowercase, 1 number and a special charecter.</p>}
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
