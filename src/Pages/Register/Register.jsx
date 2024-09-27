@@ -50,7 +50,7 @@ const Register = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
-                <h1 className="text-5xl">Register</h1>
+                <h1 className="text-4xl font-bold">Register</h1>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
@@ -82,10 +82,10 @@ const Register = () => {
                             {errors.password?.type === "pattern" && <p className="text-red-500 text-center">Password should contain 1 uppercase, 1 lowercase, 1 number and a special charecter.</p>}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <button className="btn bg-primary-color">Register</button>
                         </div>
                         <div>
-                            <p>Already have an account? <Link to={'/login'}><span className="hover:underline hover:font-semibold">Login</span></Link></p>
+                            <p>Already have an account? <Link to={'/login'}><span className="hover:underline hover:font-semibold hover:text-secondary-color">Login</span></Link></p>
                         </div>
                     </form>
                 </div>

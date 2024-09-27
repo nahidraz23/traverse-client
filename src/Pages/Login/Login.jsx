@@ -13,7 +13,6 @@ const Login = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
     } = useForm();
 
     const onSubmit = data => {
@@ -22,7 +21,13 @@ const Login = () => {
 
         login(email, password)
             .then(res => {
-                console.log(res.user);
+                navigate('/');
+                Swal.fire({
+                    icon: "success",
+                    title: `Logged in as ${res.user?.displayName}`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             })
             .catch(error => {
                 console.log(error.message);
@@ -57,12 +62,12 @@ const Login = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
-                <h1 className="text-5xl">Login</h1>
+                <h1 className="text-4xl font-bold">Login</h1>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <>
-                        <button onClick={handleGoogleLogin} className="flex justify-center mt-10 items-center gap-2 border-2 mx-10 p-2 border-gray-500 rounded-xl">
+                        <button onClick={handleGoogleLogin} className="flex justify-center mt-10 items-center gap-2 border-2 mx-10 p-2 border-secondary-color rounded-xl hover:shadow-lg shadow-secondary-color">
                             <FcGoogle className="text-2xl"></FcGoogle>
-                            <h1 className="text-2xl">Google Login</h1>
+                            <h1 className="text-2xl font-semibold">Google Login</h1>
                         </button>
                     </>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -82,10 +87,10 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn bg-primary-color">Login</button>
                         </div>
                         <div>
-                            <p>Do not have an account? <Link to={'/register'}><span className="hover:underline hover:font-semibold">Register</span></Link></p>
+                            <p>Do not have an account? <Link to={'/register'}><span className="hover:underline hover:font-semibold hover:text-secondary-color">Register</span></Link></p>
                         </div>
                     </form>
                 </div>

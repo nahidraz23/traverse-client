@@ -68,13 +68,13 @@ const AssignedTour = () => {
     return (
         <div>
             <div>
-                <h1 className="text-center">Assigned Tour</h1>
+                <h1 className="text-4xl text-center font-bold my-5">Assigned Tour</h1>
             </div>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
-                        <thead>
+                        <thead className="text-xl">
                             <tr>
                                 <th>
                                     #
@@ -86,7 +86,7 @@ const AssignedTour = () => {
                                 <th className="text-center">Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="text-xl">
                             {
                                 bookings.map((booking, index) =>
                                     <tr key={index}>
@@ -103,18 +103,23 @@ const AssignedTour = () => {
                                             <p>{booking.date}</p>
                                         </td>
                                         <td>
-                                            <p>{booking.price}</p>
+                                            <p>${booking.price}</p>
                                         </td>
                                         <td className="text-center space-x-2">
                                             {
                                                 booking?.status === "accepted" || booking?.status === "rejected"?
                                                     <>
-                                                        <p>{booking?.status}</p>
+                                                        {
+                                                            booking?.status === "accepted" && <p className="text-green-600 font-bold">Accepted</p>
+                                                        }
+                                                        {
+                                                            booking?.status === "rejected" && <p className="text-red-500 font-bold">Rejected</p>
+                                                        }
                                                     </>
                                                     :
                                                     <>
-                                                        <button onClick={() => handleAccept(booking._id)} className="btn btn-sm"> Accept</button>
-                                                        <button onClick={() => handleReject(booking._id)} className="btn btn-sm"> Reject</button>
+                                                        <button onClick={() => handleAccept(booking._id)} className="btn btn-sm text-green-600"> Accept</button>
+                                                        <button onClick={() => handleReject(booking._id)} className="btn btn-sm text-red-500"> Reject</button>
                                                     </>
                                             }
                                         </td>

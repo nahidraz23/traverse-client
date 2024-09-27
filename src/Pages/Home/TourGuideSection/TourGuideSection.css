@@ -1,38 +1,64 @@
 /* customTabs.css */
 .react-tabs__tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: 1px solid #7BBCB0;
-    border-radius: 50px;
-    transition: background-color 0.3s, color 0.3s;
-    display: inline;
-    margin-left: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #7BBCB0;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+  margin: 10px 10px 10px 0; /* Adjusted for better layout */
+  text-align: center; /* Center text for better appearance on small screens */
+}
+
+.react-tabs__tab--selected {
+  background-color: #29D9D5;
+  color: black;
+  font-weight: 600;
+  border: 1px solid #29D9D5;
+}
+
+.react-tabs__tab--disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.react-tabs__tab:hover {
+  background-color: #29D9D5;
+  color: white;
+  border-radius: 50px;
+}
+
+.react-tabs__tab-panel {
+  padding: 20px;
+  display: none; /* Hide all tab panels by default */
+}
+
+.react-tabs__tab-panel--selected {
+  display: block; /* Show only the selected tab panel */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .react-tabs__tab {
+    padding: 8px 16px;
+    margin: 8px 8px 8px 0;
+    font-size: 14px; /* Slightly smaller text */
   }
-  
-  .react-tabs__tab--selected {
-    background-color: #7BBCB0;
-    color: white;
-    font-weight: bold;
-    border: 1px solid #7BBCB0;
-  }
-  
-  .react-tabs__tab--disabled {
-    color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .react-tabs__tab:hover {
-    background-color: #7BBCB0;
-    color: white;
-    border-radius: 50px;
-  }
-  
+
   .react-tabs__tab-panel {
-    padding: 20px;
-    /* border: 1px solid #ccc; */
-    display: none; /* Hide all tab panels by default */
+    padding: 16px;
   }
-  
-  .react-tabs__tab-panel--selected {
-    display: block; /* Show only the selected tab panel */
+}
+
+@media (max-width: 480px) {
+  .react-tabs__tab {
+    padding: 6px 12px;
+    margin: 6px 6px 6px 0;
+    font-size: 12px; /* Smaller text for small screens */
   }
+
+  .react-tabs__tab-panel {
+    padding: 12px;
+  }
+}

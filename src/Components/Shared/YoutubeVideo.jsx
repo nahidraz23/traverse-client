@@ -4,7 +4,7 @@ const YoutubeVideo = ({ src }) => {
             title='Youtube player'
             sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
             src={`https://youtube.com/embed/${src}?autoplay=0`}
-            width={"667px"}
+            width={"412px"}
             height={"375px"}
         >
         </iframe>

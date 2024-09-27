@@ -1,5 +1,6 @@
 import { BiCategory } from "react-icons/bi";
-import { FaCalendarAlt, FaDollarSign, FaMobileAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaMobileAlt } from "react-icons/fa";
+import { HiMiniCurrencyBangladeshi } from "react-icons/hi2";
 import { AiOutlineStop } from "react-icons/ai";
 import PhotoAlbum from "react-photo-album";
 import { useLoaderData, useNavigate } from "react-router-dom";
@@ -137,9 +138,9 @@ const PackageDetails = () => {
                 {/* Tour details section */}
                 <div>
                     <div className="my-5">
-                        <h1 className="text-2xl text-center ">Tour Details</h1>
+                        <h1 className="text-2xl text-center font-bold">Tour Details</h1>
                     </div>
-                    <div className="flex justify-center gap-10 items-center">
+                    <div className="flex flex-col md:flex-row justify-center gap-10 items-center">
                         <div className="artboard artboard-horizontal phone-1">
                             <img src={image} alt="" className="h-full rounded-2xl" />
                         </div>
@@ -156,7 +157,7 @@ const PackageDetails = () => {
                                 <p>{date}</p>
                             </div>
                             <div className="flex gap-1 items-center text-2xl">
-                                <FaDollarSign></FaDollarSign>
+                                <HiMiniCurrencyBangladeshi></HiMiniCurrencyBangladeshi>
                                 <p>{price}</p>
                             </div>
                         </div>
@@ -165,9 +166,9 @@ const PackageDetails = () => {
                 {/* Common facilities section */}
                 <div className="my-10">
                     <div className="my-5">
-                        <h1 className="text-center text-2xl">Common Facilities</h1>
+                        <h1 className="text-center text-2xl font-bold">Common Facilities</h1>
                     </div>
-                    <div className="flex justify-center gap-5">
+                    <div className="flex flex-col md:flex-row justify-center gap-5">
                         <div className="space-y-4">
                             <div>
                                 <div className="flex gap-1 items-center text-2xl">
@@ -207,7 +208,7 @@ const PackageDetails = () => {
                 {/* Tour plan section */}
                 <div>
                     <div className="my-5">
-                        <h1 className="text-center text-2xl">Tour Plan</h1>
+                        <h1 className="text-center text-2xl font-bold">Tour Plan</h1>
                     </div>
                     <div className="space-y-2">
                         <div className="collapse collapse-plus bg-base-200">
@@ -324,7 +325,7 @@ const PackageDetails = () => {
                 {/* Tour guides section */}
                 <div>
                     <div className="my-5">
-                        <h1 className="text-2xl text-center ">Tour Details</h1>
+                        <h1 className="text-2xl text-center font-bold">Tour Guides</h1>
                     </div>
                     <div>
                         <MeetTourGuides></MeetTourGuides>
@@ -333,7 +334,7 @@ const PackageDetails = () => {
                 {/* Booking section */}
                 <div>
                     <div className="my-5">
-                        <h1 className="text-2xl text-center ">Bookings</h1>
+                        <h1 className="text-2xl text-center font-bold">Bookings</h1>
                     </div>
                     <div>
                         <div className="hero">
@@ -387,7 +388,7 @@ const PackageDetails = () => {
                                         </div>
                                         <div>
                                             <label className="label">
-                                                <span className="label-text">Tour Guide</span>
+                                                <span className="label-text ">Tour Guide</span>
                                             </label>
                                             <select {...register("guide")} className="select select-bordered w-full max-w-xs">
                                                 <option disabled selected>Select tour guide</option>
@@ -404,7 +405,7 @@ const PackageDetails = () => {
                                             </select>
                                         </div>
                                         <div className="form-control mt-6">
-                                            <button className="btn btn-primary">Book Now</button>
+                                            <button className="btn bg-primary-color">Book Now</button>
                                         </div>
                                     </form>
                                 </div>

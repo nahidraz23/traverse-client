@@ -11,6 +11,7 @@ import { Navigation } from 'swiper/modules';
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import { BiSolidCommentCheck } from "react-icons/bi";
 
 const TouristStory = () => {
     const axiosPublic = useAxiosPublic();
@@ -37,11 +38,16 @@ const TouristStory = () => {
                         stories.map((story, index) =>
                             <SwiperSlide key={index}>
                                 <Link to={`/storydetails/${story._id}`}>
-                                    <div className="space-y-2 text-2xl">
-                                        <h1 className="font-bold">Tourist Name: {story?.name}</h1>
-                                        <h1 className="font-bold">Tourist Email: {story?.email}</h1>
-                                        <h1 className="font-bold">Tour Title: {story?.title}</h1>
-                                        <p className="font-semibold">My Story: {story.experience}</p>
+                                    <div className="flex flex-col items-center justify-center gap-5">
+                                        <div>
+                                            <BiSolidCommentCheck className="text-9xl text-secondary-color"/>
+                                        </div>
+                                        <div className="space-y-2 text-2xl">
+                                            <h1 className="font-bold">Tourist Name: {story?.name}</h1>
+                                            <h1 className="font-bold">Tourist Email: {story?.email}</h1>
+                                            <h1 className="font-bold">Tour Title: {story?.title}</h1>
+                                            <p className="font-semibold">My Story: {story.experience}</p>
+                                        </div>
                                     </div>
                                 </Link>
                             </SwiperSlide>

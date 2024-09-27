@@ -12,8 +12,8 @@ const TourGuideSection = () => {
         <div className='container mx-auto'>
             <div className='text-center'>
                 <SectionHeading
-                    heading={"Tourism and Travel Guide Section"}
-                    subHeading={"Get valuable advice from seasoned travelers to make your trips smoother and more enjoyable. Learn about packing hacks, budgeting, and navigating new places like a pro."}
+                    heading={"Tourism and Travel Guide"}
+                    subHeading={"Get valuable advice from seasoned travelers to make your trips smoother and more enjoyable"}
                 ></SectionHeading>
             </div>
             <div className='text-center' >
@@ -26,7 +26,7 @@ const TourGuideSection = () => {
 
                     <TabPanel>
                         <div className='flex justify-center'>
-                            <div className="artboard artboard-horizontal phone-2">
+                            <div className="">
                                 <YoutubeVideo
                                     src={overviewYoutubeID}
                                 ></YoutubeVideo>

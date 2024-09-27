@@ -42,10 +42,10 @@ const RequestAdmin = () => {
     return (
         <div className="text-center">
             <div>
-                <h1 className="text-center">Be a tour guide</h1>
+                <h1 className="text-center text-3xl font-bold my-4">Be a tour guide</h1>
             </div>
             <div>
-                <h2>To be a volunteer add additional information</h2>
+                <h2 className="text-xl font-semibold">To be a volunteer add additional information</h2>
                 <div>
                     <div className="hero">
                         <div className="hero-content flex-col">
@@ -113,7 +113,7 @@ const RequestAdmin = () => {
                                                 </>
                                                 :
                                                 <>
-                                                    <button className="btn btn-primary">Request to admin</button>
+                                                    <button className="btn bg-primary-color">Request to admin</button>
                                                 </>
                                         }
                                     </div>

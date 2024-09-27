@@ -17,13 +17,13 @@ const MyBookings = () => {
     return (
         <div>
             <div>
-                <h1 className="text-center">My bookings</h1>
+                <h1 className="text-center text-3xl font-bold my-5">My bookings</h1>
             </div>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
-                        <thead>
+                        <thead className="text-xl">
                             <tr>
                                 <th>
                                     #
@@ -36,7 +36,7 @@ const MyBookings = () => {
                                 <th className="text-center">Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="text-xl">
                             {
                                 bookings.map((item, index) =>
                                     <tr key={index}>
@@ -61,13 +61,13 @@ const MyBookings = () => {
                                         <td className="text-center space-x-2">
                                             {
                                                 item.status === "accepted" &&
-                                                <button className="btn btn-circle">
+                                                <button className="btn btn-circle bg-green-500">
                                                     Pay
                                                 </button>
                                             }
                                             {
                                                 item.status === 'In Review' &&
-                                                <button className="btn">
+                                                <button className="btn bg-red-400">
                                                     <p className="p-2">Cancel</p>
                                                 </button>
                                             }

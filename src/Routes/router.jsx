@@ -19,6 +19,8 @@ import PrivateRoute from "./PrivateRoute";
 import AddPackage from "../Pages/Dashboard/AdminDashboard/AddPackage/AddPackage";
 import TourTypeCard from "../Pages/Home/TourTypeSection/TourTypeCard/TourTypeCard";
 import StoryDetails from "../Pages/Home/TouristStorySection/StoryDetails";
+import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -44,22 +46,22 @@ export const router = createBrowserRouter([
             {
                 path: '/packageDetails/:id',
                 element: <PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5300/packageDetails/${params.id}`)
+                loader: ({params}) => fetch(`https://traverse-server.vercel.app/packageDetails/${params.id}`)
             },
             {
                 path: '/guideDetails/:id',
                 element: <PrivateRoute><TourGuidesProfile></TourGuidesProfile></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5300/guides/${params.id}`)
+                loader: ({params}) => fetch(`https://traverse-server.vercel.app/guides/${params.id}`)
             },
             {
                 path: '/tourtype/:type',
                 element: <TourTypeCard></TourTypeCard>,
-                loader: ({params}) => fetch(`http://localhost:5300/packages/${params.type}`)
+                loader: ({params}) => fetch(`https://traverse-server.vercel.app/packages/${params.type}`)
             },
             {
                 path: '/storydetails/:id',
                 element: <StoryDetails></StoryDetails>,
-                loader: ({params}) => fetch(`http://localhost:5300/stories/${params.id}`)
+                loader: ({params}) => fetch(`https://traverse-server.vercel.app/stories/${params.id}`)
             }
         ]
     },
@@ -67,18 +69,23 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>,
         children: [
+
+            {
+                path: '/dashboard',
+                element: <DashboardHome></DashboardHome>
+            },
             // admin dashboard
             {
                 path: '/dashboard/adminprofile',
-                element: <AdminProfile></AdminProfile>
+                element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
             },
             {
                 path: '/dashboard/manageusers',
-                element: <ManageUsers></ManageUsers>
+                element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             },
             {
                 path: '/dashboard/addpackage',
-                element: <AddPackage></AddPackage>
+                element: <AdminRoute><AddPackage></AddPackage></AdminRoute>
             },
 
             // guide dashboard

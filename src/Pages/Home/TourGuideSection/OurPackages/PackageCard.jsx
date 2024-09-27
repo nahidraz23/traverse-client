@@ -1,5 +1,5 @@
 import { BiCategory } from "react-icons/bi";
-import { FaCalendarAlt, FaDollarSign, FaHeart } from "react-icons/fa";
+import { FaCalendarAlt, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 import useAuth from "../../../../hooks/useAuth";
@@ -39,11 +39,11 @@ const PackageCard = ({ cardInfo }) => {
     }
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 shadow-xl">
             <figure>
-                <img src={image} alt="Shoes" />
-                <button onClick={ () => handleWishlist ()} className="btn btn-circle btn-outline absolute top-5 right-5 hover:bg-transparent">
-                    <FaHeart className="text-3xl text-white"></FaHeart>
+                <img src={image} alt="Shoes" className="md:h-[250px]"/>
+                <button onClick={ () => handleWishlist ()} className="absolute top-5 right-5 hover:bg-transparent tooltip" data-tip="Add to wishlist">
+                    <FaHeart className="text-3xl text-red-500 " ></FaHeart>
                 </button>
             </figure>
             <div className="card-body">
@@ -60,9 +60,8 @@ const PackageCard = ({ cardInfo }) => {
                 </div>
                 <div className="divider divider-info"></div>
                 <div className="flex items-center">
-                    <p className="flex items-center gap-1 text-xl font-semibold">
-                        <FaDollarSign></FaDollarSign>
-                        {price}
+                    <p className="text-xl font-semibold">
+                        <p>{price} Taka</p>
                     </p>
                     <Link to={`/packageDetails/${_id}`}><button  className="btn bg-primary-color font-mulish font-semibold">View Package</button></Link>
                 </div>

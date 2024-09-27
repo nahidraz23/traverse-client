@@ -26,10 +26,11 @@ const UserProfile = () => {
 
     return (
         <div className="">
-            <div className="card shadow-xl max-w-md mx-auto my-auto ">
-                <div className="my-10">
-                    <h1 className="text-center text-3xl">user profile</h1>
-                </div>
+            <div className="my-10">
+                <h1 className="text-center text-3xl font-bold">User Profile</h1>
+            </div>
+            <div className="card border-2 border-secondary-color p-5 max-w-md mx-auto my-auto ">
+
                 <div className="avatar justify-center">
                     <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={user?.photoURL} />
@@ -56,7 +57,7 @@ const UserProfile = () => {
             </div>
             <div>
                 <div>
-                    <h1 className="text-center">Share tour story</h1>
+                    <h1 className="text-center font-bold text-3xl py-5">Share tour story</h1>
                 </div>
                 <div>
                     <div className="hero">
@@ -88,7 +89,7 @@ const UserProfile = () => {
                                         <textarea {...register("experience")} className="textarea textarea-bordered" placeholder="Bio"></textarea>
                                     </div>
                                     <div className="form-control mt-6">
-                                        <button className="btn btn-primary">Post Story</button>
+                                        <button className="btn bg-primary-color">Post Story</button>
                                     </div>
                                 </form>
                             </div>

@@ -49,13 +49,13 @@ const MyWishList = () => {
     return (
         <div>
             <div className="mb-10">
-                <h1 className="text-center text-4xl">My wishlist</h1>
+                <h1 className="text-center text-3xl font-bold">My wishlist</h1>
             </div>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
-                        <thead>
+                        <thead className="text-xl"> 
                             <tr>
                                 <th>
                                     #
@@ -68,7 +68,7 @@ const MyWishList = () => {
                                 <th className="text-center">Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="text-xl">
                             {
                                 wishlist.map((item, index) =>
                                     <tr key={index}>
@@ -98,11 +98,11 @@ const MyWishList = () => {
                                         </td>
                                         <td className="text-center space-x-2">
                                             <button onClick={() => handleDeleteWishlist(item._id)} className="btn btn-circle">
-                                                <FaTrash></FaTrash>
+                                                <FaTrash className="text-red-500"></FaTrash>
                                             </button>
                                             <Link to={`/packageDetails/${item.whishlistId}`}>
                                                 <button className="btn btn-md btn-circle">
-                                                    <FaEye></FaEye>
+                                                    <FaEye className="text-blue-500"></FaEye>
                                                 </button>
                                             </Link>
 

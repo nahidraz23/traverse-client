@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import { FaEnvelope, FaPowerOff, FaUser } from "react-icons/fa";
 import { MdAdminPanelSettings } from "react-icons/md";
 import logo from '../../assets/traverse_logo.jpeg';
+import { FaPowerOff } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, signOutUser } = useAuth();
@@ -47,7 +47,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar bg-black fixed z-10 bg-opacity-50">
+        <div className="navbar bg-black px-8">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -92,24 +92,26 @@ const Navbar = () => {
                                     </div>
                                 </summary>
                                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                    <div className="bg-base-200 rounded-t-xl">
+                                        <li>
+                                            <div className="flex gap-2 items-center justify-center">
+
+                                                <p className="font-bold">{user?.displayName}</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="flex gap-2 items-center justify-center">
+                                                <p className="font-bold">{user?.email}</p>
+                                            </div>
+                                        </li>
+                                    </div>
+                                    <hr className="border-secondary-color" />
                                     <Link to={'/dashboard'}>
                                         <li><div className="flex gap-2 items-center ">
                                             <MdAdminPanelSettings></MdAdminPanelSettings>
                                             Dashboard
                                         </div></li>
                                     </Link>
-                                    <li>
-                                        <div className="flex gap-2 items-center">
-                                            <FaUser className="text-green-500"></FaUser>
-                                            <p>{user?.displayName}</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="flex gap-2 items-center">
-                                            <FaEnvelope className="text-blue-500"></FaEnvelope>
-                                            <p>{user?.email}</p>
-                                        </div>
-                                    </li>
                                     <li><button onClick={handleSignOut} className="flex items-center gap-2">
                                         <FaPowerOff className="text-red-500"></FaPowerOff>
                                         <p>Log Out</p>
@@ -120,7 +122,7 @@ const Navbar = () => {
                         </>
                         :
                         <>
-                            <Link to={'/login'} className="btn bg-primary-color text-black dark:hover:text-primary-color border-none">Login</Link>
+                            <Link to={'/login'} className="btn bg-primary-color text-black dark:hover:text-primary-color border-none rounded-full">Login</Link>
                         </>
                 }
                 <div className="md:ml-4">

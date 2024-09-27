@@ -42,7 +42,7 @@ const AddPackage = () => {
     return (
         <div>
             <div>
-                <h1 className="text-center">Add Package</h1>
+                <h1 className="text-center text-3xl font-bold p-5">Add Package</h1>
             </div>
             <div>
                 <div className="hero ">
@@ -94,7 +94,7 @@ const AddPackage = () => {
                                     ></Controller>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Add Package</button>
+                                    <button className="btn bg-primary-color">Add Package</button>
                                 </div>
                             </form>
                         </div>

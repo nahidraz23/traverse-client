@@ -3,11 +3,13 @@ import { RiAlignJustify, RiCloseLargeFill } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useTourGuide from "../hooks/useTourGuide";
+import useAuth from "../hooks/useAuth";
 
 const DashboardLayout = () => {
     const [open, setOpen] = useState(false);
     const [isAdmin] = useAdmin();
     const [isTourGuide] = useTourGuide();
+    const { user } = useAuth();
 
     const handleDrawer = () => {
         setOpen(!open);
@@ -25,28 +27,28 @@ const DashboardLayout = () => {
                         {
                             isAdmin ?
                                 <>
-                                    <NavLink to={"/dashboard/adminprofile"} className="md:text-2xl p-4"><li>My Profile</li></NavLink>
-                                    <NavLink to={"/dashboard/addpackage"} className="md:text-2xl p-4"><li>Add Package</li></NavLink>
-                                    <NavLink to={"/dashboard/manageusers"} className="md:text-2xl p-4"><li>Manage Users</li></NavLink>
+                                    <NavLink to={"/dashboard/adminprofile"} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4">My Profile</li></NavLink>
+                                    <NavLink to={"/dashboard/addpackage"} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4">Add Package</li></NavLink>
+                                    <NavLink to={"/dashboard/manageusers"} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4">Manage Users</li></NavLink>
                                     <div className="divider divider-info"></div>
-                                    <NavLink to={'/'}><li className="md:text-2xl p-4">Home</li></NavLink>
+                                    <NavLink to={'/'}><li className="md:text-3xl font-semibold p-4" >Home</li></NavLink>
                                 </>
                                 :
                                 (isTourGuide ?
                                     <>
-                                        <NavLink to={"/dashboard/guideprofile"} className="md:text-2xl p-4"><li>My Profile</li></NavLink>
-                                        <NavLink to={"/dashboard/assignedtour"} className="md:text-2xl p-4"><li>Assigned Tour</li></NavLink>
+                                        <NavLink to={"/dashboard/guideprofile"} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4">My Profile</li></NavLink>
+                                        <NavLink to={"/dashboard/assignedtour"} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4">Assigned Tour</li></NavLink>
                                         <div className="divider divider-info"></div>
-                                        <NavLink to={'/'}><li className="md:text-2xl p-4">Home</li></NavLink>
+                                        <NavLink to={'/'}><li className="md:text-3xl font-semibold p-4" >Home</li></NavLink>
                                     </>
                                     :
                                     <>
-                                        <NavLink to={'/dashboard/userprofile'}><li className="md:text-2xl p-4">My Profile</li></NavLink>
-                                        <NavLink to={'/dashboard/userbookings'}><li className="md:text-2xl p-4">My Bookings</li></NavLink>
-                                        <NavLink to={'/dashboard/userwishlist'}><li className="md:text-2xl p-4">My Wishlist</li></NavLink>
-                                        <NavLink to={'/dashboard/requestadmin'}><li className="md:text-2xl p-4">Request to Admin</li></NavLink>
+                                        <NavLink to={'/dashboard/userprofile'} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4" >My Profile</li></NavLink>
+                                        <NavLink to={'/dashboard/userbookings'} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4" >My Bookings</li></NavLink>
+                                        <NavLink to={'/dashboard/userwishlist'} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4" >My Wishlist</li></NavLink>
+                                        <NavLink to={'/dashboard/requestadmin'} className={({ isActive }) => isActive ? 'border-l-8 border-secondary-color text-secondary-color' : ''}><li className="md:text-3xl font-semibold p-4" >Request to Admin</li></NavLink>
                                         <div className="divider divider-info"></div>
-                                        <NavLink to={'/'}><li className="md:text-2xl p-4">Home</li></NavLink>
+                                        <NavLink to={'/'}><li className="md:text-3xl font-semibold p-4" >Home</li></NavLink>
                                     </>
                                 )
                         }
