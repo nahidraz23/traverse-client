@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import OurServices from "./OurServicesSection/OurServices";
 import TourGuideSection from "./TourGuideSection/TourGuideSection";
 import TourTypeSection from "./TourTypeSection/TourTypeSection";
 import TouristStory from "./TouristStorySection/TouristStory";
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <WhyChooseUs></WhyChooseUs>
             <TourGuideSection></TourGuideSection>
+            <OurServices></OurServices>
             <TourTypeSection></TourTypeSection>
             <TouristStory></TouristStory>
         </div>
