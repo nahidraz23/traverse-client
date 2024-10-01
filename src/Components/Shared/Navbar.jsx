@@ -11,10 +11,9 @@ const Navbar = () => {
     const navLinks = (
         <div className="flex flex-col md:flex-row gap-9 text-black md:text-white font-semibold text-xl">
             <NavLink><li>Home</li></NavLink>
-            <NavLink><li>Community</li></NavLink>
             <NavLink><li>Blogs</li></NavLink>
-            <NavLink><li>About Us</li></NavLink>
-            <NavLink><li>Contact Us</li></NavLink>
+            <NavLink><li>About</li></NavLink>
+            <NavLink><li>Contact</li></NavLink>
         </div>
     )
 
@@ -66,15 +65,14 @@ const Navbar = () => {
                     <a className="text-3xl font-semibold text-white">Traverse</a>
                 </div>
             </div>
-
+            <div className="navbar-center">
+                <ul className="menu menu-horizontal px-1">
+                    {
+                        navLinks
+                    }
+                </ul>
+            </div>
             <div className="navbar-end">
-                <div className="navbar-center hidden lg:flex mr-32">
-                    <ul className="menu menu-horizontal px-1">
-                        {
-                            navLinks
-                        }
-                    </ul>
-                </div>
                 {
                     user ?
                         <>

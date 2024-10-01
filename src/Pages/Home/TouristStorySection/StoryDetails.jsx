@@ -5,14 +5,14 @@ import { FacebookIcon, } from "react-share";
 
 const StoryDetails = () => {
     const loadedData = useLoaderData();
-    console.log(loadedData)
+    // console.log(loadedData)
     const { name, email, experience, title } = loadedData
     const shareUrl = "https://www.facebook.com/"
 
     return (
-        <div className="min-h-[calc(100vh-278px)] pt-20 container mx-auto flex flex-col justify-center items-center">
+        <div className="min-h-[calc(100vh-278px)] container mx-auto flex flex-col justify-center items-center">
             <div>
-                <h1 className="text-center text-3xl font-bold p-5">Story Details</h1>
+                <h1 className="text-center text-3xl font-bold py-4">Story Details</h1>
             </div>
             <div className="border-2 flex flex-col w-1/2 rounded-2xl p-5 border-secondary-color">
 

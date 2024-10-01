@@ -5,9 +5,9 @@ const TourTypeCard = () => {
     const loadedData = useLoaderData();
 
     return (
-        <div className="min-h-[calc(100vh-278px)] pt-20 container mx-auto gap">
+        <div className="min-h-[calc(100vh-278px)] py-12 container mx-auto gap">
             <div>
-                <h1 className="text-center">Tour Type</h1>
+                <h1 className="text-center text-4xl font-bold">Tour Type</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center my-5">
                 {
