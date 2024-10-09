@@ -43,7 +43,7 @@ const TouristStory = () => {
                         // when window width is >= 768px (larger devices)
                         768: {
                             slidesPerView: 3,
-                            spaceBetween: 30,
+                            spaceBetween: 10,
                         },
                     }}
 
