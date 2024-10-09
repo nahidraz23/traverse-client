@@ -4,14 +4,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 // import required modules
-import { Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
+
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
-import { BiSolidCommentCheck } from "react-icons/bi";
+import StoryCard from "./StoryCard";
 
 const TouristStory = () => {
     const axiosPublic = useAxiosPublic();
@@ -29,27 +29,34 @@ const TouristStory = () => {
             <div>
                 <SectionHeading
                     heading={"Tourist Story"}
-                    subHeading={"Experience the world through captivating travel tales and unforgettable adventures"}
+                    subHeading={"Experience the world through captivating travel tales"}
                 ></SectionHeading>
             </div>
-            <div className="text-center my-10">
-                <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <div className="my-10 container mx-auto w-full p-4 md:p-0">
+                <Swiper
+                    breakpoints={{
+                        // when window width is >= 640px (medium devices)
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        // when window width is >= 768px (larger devices)
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                    }}
+
+                    spaceBetween={30}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination]}
+                    className="mySwiper">
                     {
                         stories.map((story, index) =>
                             <SwiperSlide key={index}>
-                                <Link to={`/storydetails/${story._id}`}>
-                                    <div className="flex flex-col items-center justify-center gap-5">
-                                        <div>
-                                            <BiSolidCommentCheck className="text-9xl text-secondary-color"/>
-                                        </div>
-                                        <div className="space-y-2 text-2xl">
-                                            <h1 className="font-bold">Tourist Name: {story?.name}</h1>
-                                            <h1 className="font-bold">Tourist Email: {story?.email}</h1>
-                                            <h1 className="font-bold">Tour Title: {story?.title}</h1>
-                                            <p className="font-semibold">My Story: {story.experience}</p>
-                                        </div>
-                                    </div>
-                                </Link>
+                                <StoryCard story={story}></StoryCard>
                             </SwiperSlide>
                         )
                     }
