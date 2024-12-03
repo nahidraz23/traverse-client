@@ -72,7 +72,7 @@ const Navbar = () => {
                     }
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end z-30">
                 {
                     user ?
                         <>
